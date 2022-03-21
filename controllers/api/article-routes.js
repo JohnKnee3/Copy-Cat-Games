@@ -6,16 +6,6 @@ router.get("/", (req, res) => {
   console.log("======================");
   Article.findAll({
     attributes: ["id", "title", "created_at"],
-    // include: [
-    //   {
-    //     model: Comment,
-    //     attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
-    //     include: {
-    //       model: User,
-    //       attributes: ["username"],
-    //     },
-    //   },
-    // ],
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -30,19 +20,21 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_text", "title", "created_at"],
+    attributes: ["id", "title", "article_text", "created_at"],
     // include: [
     //   {
-    //     model: Comment,
-    //     attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+    //     model: Article_Comment,
+    //     attributes: [
+    //       "id",
+    //       "comment_text",
+    //       "article_id",
+    //       "user_id",
+    //       "created_at",
+    //     ],
     //     include: {
     //       model: User,
     //       attributes: ["username"],
     //     },
-    //   },
-    //   {
-    //     model: User,
-    //     attributes: ["username"],
     //   },
     // ],
   })
