@@ -20,16 +20,16 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    // include: [
-    //   {
-    //     model: Article_Comment,
-    //     attributes: ["id", "comment_text", "created_at"],
-    //     include: {
-    //       model: Article,
-    //       attributes: ["title"],
-    //     },
-    //   },
-    // ],
+    include: [
+      {
+        model: Article_Comment,
+        attributes: ["id", "comment_text", "created_at"],
+        include: {
+          model: Article,
+          attributes: ["title"],
+        },
+      },
+    ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {

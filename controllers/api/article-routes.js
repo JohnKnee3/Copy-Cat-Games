@@ -21,22 +21,22 @@ router.get("/:id", (req, res) => {
       id: req.params.id,
     },
     attributes: ["id", "title", "article_text", "created_at"],
-    // include: [
-    //   {
-    //     model: Article_Comment,
-    //     attributes: [
-    //       "id",
-    //       "comment_text",
-    //       "article_id",
-    //       "user_id",
-    //       "created_at",
-    //     ],
-    //     include: {
-    //       model: User,
-    //       attributes: ["username"],
-    //     },
-    //   },
-    // ],
+    include: [
+      {
+        model: Article_Comment,
+        attributes: [
+          "id",
+          "comment_text",
+          "article_id",
+          "user_id",
+          "created_at",
+        ],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+    ],
   })
     .then((dbPostData) => {
       if (!dbPostData) {
