@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Article_Post, Article_Comment } = require("../../models");
+const { User, Article_Comment } = require("../../models");
 
 // get all users
 router.get("/", (req, res) => {
@@ -13,7 +13,6 @@ router.get("/", (req, res) => {
     });
 });
 
-//finds one user
 //finds the below information about one user
 router.get("/:id", (req, res) => {
   User.findOne({
