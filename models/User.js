@@ -64,3 +64,13 @@ User.init(
 );
 
 module.exports = User;
+
+// const { v4: uuidv4 } = require("uuid");
+
+// id: {
+//   type: Sequelize.UUID,
+//   defaultValue: Sequelize.UUIDV4,
+//   primaryKey: true,
+// },
+
+// newUserData.id = uuidv4();
