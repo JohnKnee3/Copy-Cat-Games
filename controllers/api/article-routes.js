@@ -1,11 +1,17 @@
 const router = require("express").Router();
-const { Article, User, Article_Comment } = require("../../models");
+const { Article, User, Article_Comment, Images } = require("../../models");
 
 // get all articles
 router.get("/", (req, res) => {
   console.log("======================");
   Article.findAll({
     attributes: ["id", "title", "created_at"],
+    include: [
+      {
+        model: Images,
+        attributes: ["filename"],
+      },
+    ],
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -22,6 +28,7 @@ router.get("/:id", (req, res) => {
     },
     attributes: ["id", "title", "article_text", "created_at"],
     include: [
+      { model: Images, attributes: ["filename"] },
       {
         model: Article_Comment,
         attributes: [
