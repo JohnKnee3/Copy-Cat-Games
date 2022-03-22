@@ -3,6 +3,9 @@ const User = require("./User");
 const Article = require("./Article");
 const Article_Comment = require("./Article_Comment");
 const Images = require("./Images");
+const Forum_Comment = require("./Forum-Comment")
+const Forum_Post = require("./Forum-Post")
+const Forum_Vote = require("./Forum-Vote")
 
 // create associations
 // User.hasMany(Post, {
@@ -41,4 +44,8 @@ Article.hasMany(Article_Comment, {
   foreignKey: "article_id",
 });
 
-module.exports = { User, Article, Article_Comment, Images };
+// start of forum connections:
+
+
+
+module.exports = { User, Article, Article_Comment, Images, Forum_Comment, Forum_Post, Forum_Vote };
