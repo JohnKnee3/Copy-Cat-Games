@@ -30,24 +30,4 @@ router.post("/", withAuth, (req, res) => {
   }
 });
 
-//delete a comment while logged in as a user
-router.delete("/:id", withAuth, (req, res) => {
-  Article_Comment.destroy({
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((dbCommentData) => {
-      if (!dbCommentData) {
-        res.status(404).json({ message: "No comment found with this id!" });
-        return;
-      }
-      res.json(dbCommentData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
 module.exports = router;
