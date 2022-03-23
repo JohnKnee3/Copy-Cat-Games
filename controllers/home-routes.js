@@ -56,7 +56,7 @@ router.get("/:id", (req, res) => {
   })
     .then((dbArticleData) => {
       const article = dbArticleData.get({ plain: true });
-      res.render("aticles", { article });
+      res.render("articles", { article });
     })
     .catch((err) => {
       console.log(err);
