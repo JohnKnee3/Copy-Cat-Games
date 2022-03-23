@@ -1,9 +1,8 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Forum_Post, User, Forum_Comment, Forum_Vote } = require('../../models');
+const { Forum_Post, User, Forum_Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// get all posts w/o authentication, includes comments
 router.get('/', (req, res) => {
     console.log('======================');
     Forum_Post.findAll({
@@ -11,8 +10,8 @@ router.get('/', (req, res) => {
         //     'id',
         //     'post_content',
         //     'title',
-        //     'created_at',
-        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        //     'created_at'
+        //     // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         // ],
         include: [
             {
