@@ -7,4 +7,12 @@
   />
   <p class="article-text">{{article.article_text}}</p>
   <p>{{article.created_at}}</p>
+  <div>
+    {{#each article.article_comments as |article_comment|}}
+      <div>
+        <p>{{comment_text}}</p>
+        <p>{{user.username}}</p>
+      </div>
+    {{/each}}
+  </div>
 </article>
