@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy Cat Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smokum&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Copy Cat Games</a>
+      </h1>
+      <nav>
+        <h2><a href="/">Store</a></h2>
+        {{#if loggedIn}}
+          <h2><a href="/Logout">Logout</a></h2>
+        {{else}}
+          <h2><a href="/login">Login</a></h2>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{show current threads}}}
+    </main>
+    <footer>
+      <h6>Created By Casey, Kole, John, and Amir</h6>
+    </footer>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
+  </body>
+</html>
