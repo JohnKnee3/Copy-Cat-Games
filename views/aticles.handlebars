@@ -3,7 +3,7 @@
   <div class="images-container">
     <img
       class="images"
-      src="/images/{{article.images.2.filename}}"
+      src="/images/{{article.images.0.filename}}"
       alt="{{article.title}}"
     />
   </div>
@@ -11,11 +11,10 @@
   <div class="images-container">
     <img
       class="images"
-      src="/images/{{article.images.1.filename}}"
+      src="/images/{{article.images.2.filename}}"
       alt="{{article.title}}"
     />
   </div>
-  <p>{{article.created_at}}</p>
   <div class="comments">
     <h5>Comments:</h5>
     {{#each article.article_comments as |article_comment|}}
