@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Article, Images, Article_Comment, User } = require("../models");
 
+//Homepage load
 router.get("/", (req, res) => {
   Article.findAll({
     attributes: ["id", "title"],
@@ -23,10 +24,12 @@ router.get("/", (req, res) => {
     });
 });
 
+//Log in Route
 router.get("/login", (req, res) => {
   res.render("login");
 });
 
+//Get one article
 router.get("/:id", (req, res) => {
   Article.findOne({
     where: {
