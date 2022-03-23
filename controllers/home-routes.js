@@ -1,10 +1,15 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
-const { Article, Images } = require("../models");
+const { Article, ImagesArt } = require("../models");
 
 router.get("/", (req, res) => {
   Article.findAll({
-    attributes: ["title", "article_text"],
+    attributes: ["id", "title", "article_text"],
+    include: [
+      {
+        model: ImagesArt,
+        attributes: ["filename", "article_id"],
+      },
+    ],
   })
     .then((dbArticleData) => {
       const articles = dbArticleData.map((article) =>

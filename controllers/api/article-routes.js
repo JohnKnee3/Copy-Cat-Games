@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Article, User, Article_Comment, Images } = require("../../models");
+const { Article, User, Article_Comment, ImagesArt } = require("../../models");
 
 // get all articles
 router.get("/", (req, res) => {
@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     attributes: ["id", "title", "created_at"],
     include: [
       {
-        model: Images,
+        model: ImagesArt,
         attributes: ["filename"],
       },
     ],
@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
     },
     attributes: ["id", "title", "article_text", "created_at"],
     include: [
-      { model: Images, attributes: ["filename"] },
+      { model: ImagesArt, attributes: ["filename"] },
       {
         model: Article_Comment,
         attributes: [

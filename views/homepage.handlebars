@@ -1,24 +1,12 @@
-<ol class="post-list">
-  {{#each articles as |article|}}
-    <li>
-      <article class="post">
-        <div class="title">
-          <a
-            href="{{article.article_text}}"
-            target="_blank"
-          >{{article.title}}</a>
-          {{!-- <span>{{article.article_text}}</span> --}}
-        </div>
-        {{!-- <div class="meta">
-          {{post.vote_count}}
-          point(s) by
-          {{post.user.username}}
-          on
-          {{post.created_at}}
-          |
-          <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-        </div> --}}
-      </article>
-    </li>
-  {{/each}}
-</ol>
+{{#each articles as |article|}}
+  <div class="games">
+    <img
+      class="images-art"
+      src="/images/{{article.imagesarts.0.filename}}"
+      alt="{{article.title}}"
+    />
+    <h3>
+      <a href="{{article.article_text}}" target="_blank">{{article.title}}</a>
+    </h3>
+  </div>
+{{/each}}

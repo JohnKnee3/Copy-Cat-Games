@@ -2,7 +2,7 @@ const sequelize = require("../config/connection");
 const seedUsers = require("./userData");
 const seedArticles = require("./articleData");
 const seedArticleComments = require("./article_commentData");
-const seedImages = require("./imagesData");
+const seedImagesArt = require("./imagesArtData");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -13,7 +13,7 @@ const seedAll = async () => {
 
   await seedArticleComments();
 
-  await seedImages();
+  await seedImagesArt();
 
   process.exit(0);
 };
