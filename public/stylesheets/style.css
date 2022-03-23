@@ -1,0 +1,121 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+:root {
+  --primary: black;
+  --secondary: blanchedalmond;
+}
+body {
+  background-color: var(--secondary);
+}
+header {
+  background-color: var(--primary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+h1 {
+  margin: 20px;
+}
+h1 a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-family: "Smokum", cursive;
+  font-size: 3rem;
+  font-weight: normal;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+h2 {
+  margin: 20px;
+}
+h2 a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-family: "Smokum", cursive;
+  font-size: 2rem;
+  font-weight: normal;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+.games {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.images-art {
+  height: 300px;
+  width: 500px;
+  border-radius: 25px;
+}
+h3 {
+  margin: 10px 0px;
+}
+h3 a {
+  color: var(--primary);
+  text-decoration: none;
+}
+footer {
+  background-color: var(--primary);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+h6 {
+  color: var(--secondary);
+  font-family: "Smokum", cursive;
+  font-size: 1.5rem;
+  padding: 10px;
+  font-weight: normal;
+}
+.login-logout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px 0px;
+}
+.form-label-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px 0px;
+}
+.form-label {
+  font-size: 2rem;
+}
+.form-input {
+  width: 500px;
+  font-size: 2rem;
+}
+.form-button {
+  width: 500px;
+  font-size: 2rem;
+  background-color: var(--primary);
+  color: var(--secondary);
+}
