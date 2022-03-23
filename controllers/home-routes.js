@@ -1,5 +1,11 @@
 const router = require("express").Router();
-const { Article, ImagesArt } = require("../models");
+const {
+  Article,
+  User,
+  Article_Comment,
+  ImagesArt,
+  ImagesAction,
+} = require("../models");
 
 router.get("/", (req, res) => {
   Article.findAll({
@@ -25,6 +31,43 @@ router.get("/", (req, res) => {
 
 router.get("/login", (req, res) => {
   res.render("login");
+});
+
+router.get("/:id", (req, res) => {
+  Article.findOne({
+    where: {
+      id: req.params.id,
+    },
+    attributes: ["id", "title", "article_text", "created_at"],
+    include: [
+      {
+        model: ImagesAction,
+        attributes: ["filename", "article_id"],
+      },
+      {
+        model: Article_Comment,
+        attributes: [
+          "id",
+          "comment_text",
+          "article_id",
+          "user_id",
+          "created_at",
+        ],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+    ],
+  })
+    .then((dbArticleData) => {
+      const article = dbArticleData.get({ plain: true });
+      res.render("aticles", { article });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

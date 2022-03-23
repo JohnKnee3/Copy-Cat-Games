@@ -3,6 +3,7 @@ const User = require("./User");
 const Article = require("./Article");
 const Article_Comment = require("./Article_Comment");
 const ImagesArt = require("./ImagesArt");
+const ImagesAction = require("./ImagesAction");
 
 // create associations
 // User.hasMany(Post, {
@@ -14,8 +15,18 @@ const ImagesArt = require("./ImagesArt");
 //   onDelete: "SET NULL",
 // });
 
+User.hasMany(Article_Comment, {
+  foreignKey: "user_id",
+  onDelete: "SET NULL",
+});
+
 Article_Comment.belongsTo(User, {
   foreignKey: "user_id",
+  onDelete: "SET NULL",
+});
+
+Article.hasMany(Article_Comment, {
+  foreignKey: "article_id",
   onDelete: "SET NULL",
 });
 
@@ -32,13 +43,12 @@ ImagesArt.belongsTo(Article, {
   foreignKey: "article_id",
 });
 
-User.hasMany(Article_Comment, {
-  foreignKey: "user_id",
-  onDelete: "SET NULL",
-});
-
-Article.hasMany(Article_Comment, {
+Article.hasMany(ImagesAction, {
   foreignKey: "article_id",
 });
 
-module.exports = { User, Article, Article_Comment, ImagesArt };
+ImagesAction.belongsTo(Article, {
+  foreignKey: "article_id",
+});
+
+module.exports = { User, Article, Article_Comment, ImagesArt, ImagesAction };
