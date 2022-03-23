@@ -17,9 +17,9 @@
       </h1>
       <nav>
         <h2><a href="/">Forums</a></h2>
-        <h2><a href="/">Store</a></h2>
+        <h2><a href="/store">Store</a></h2>
         {{#if loggedIn}}
-          <h2><a href="/Logout">Logout</a></h2>
+          <button id="logout" class="btn-no-style">logout</button>
         {{else}}
           <h2><a href="/login">Login</a></h2>
         {{/if}}

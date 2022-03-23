@@ -34,6 +34,12 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+//trying to go to the store
+router.get("/store", (req, res) => {
+
+  res.render("store");
+});
+
 //Get one article
 router.get("/article/:id", (req, res) => {
   Article.findOne({
