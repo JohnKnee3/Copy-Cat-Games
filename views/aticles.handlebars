@@ -7,7 +7,7 @@
       alt="{{article.title}}"
     />
   </div>
-  <p class="article-text">{{article.article_text}}</p>
+  <p class="article-text">{{article.article_text_1}}</p>
   <div class="images-container">
     <img
       class="images"
@@ -15,8 +15,15 @@
       alt="{{article.title}}"
     />
   </div>
+  <p class="article-text">{{article.article_text_2}}</p>
   <div class="comments">
     <h5>Comments:</h5>
+    {{#if loggedIn}}
+      <h2>Logged In</h2>
+    {{else}}
+      <h2>Logged Out</h2>
+    {{/if}}
+
     {{#each article.article_comments as |article_comment|}}
       <div class="comment">
         <p class="comment-text">{{comment_text}}<span>

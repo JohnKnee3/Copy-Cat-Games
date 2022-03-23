@@ -44,7 +44,7 @@ router.get("/article/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title", "article_text", "created_at"],
+    attributes: ["id", "title", "article_text_1", "article_text_2"],
     include: [
       {
         model: Images,
