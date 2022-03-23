@@ -30,13 +30,11 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-
   res.render("login");
 });
 
 //trying to go to the store
 router.get("/store", (req, res) => {
-
   res.render("store");
 });
 
