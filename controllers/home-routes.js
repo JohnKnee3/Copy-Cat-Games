@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Article, Images, Article_Comment, User } = require("../models");
 
+//Homepage load
 router.get("/", (req, res) => {
   Article.findAll({
     attributes: ["id", "title"],
@@ -15,7 +16,7 @@ router.get("/", (req, res) => {
       const articles = dbArticleData.map((article) =>
         article.get({ plain: true })
       );
-      res.render("homepage", { articles });
+      res.render("homepage", { articles, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -23,11 +24,18 @@ router.get("/", (req, res) => {
     });
 });
 
+//Log in Route
 router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
   res.render("login");
 });
 
-router.get("/:id", (req, res) => {
+//Get one article
+router.get("/article/:id", (req, res) => {
   Article.findOne({
     where: {
       id: req.params.id,
@@ -56,7 +64,7 @@ router.get("/:id", (req, res) => {
   })
     .then((dbArticleData) => {
       const article = dbArticleData.get({ plain: true });
-      res.render("articles", { article });
+      res.render("aticles", { article, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
