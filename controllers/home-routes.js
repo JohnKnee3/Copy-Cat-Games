@@ -5,6 +5,7 @@ const {
   Article_Comment,
   ImagesArt,
   ImagesAction,
+  ImagesBox,
 } = require("../models");
 
 router.get("/", (req, res) => {
@@ -42,6 +43,10 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: ImagesAction,
+        attributes: ["filename", "article_id"],
+      },
+      {
+        model: ImagesBox,
         attributes: ["filename", "article_id"],
       },
       {

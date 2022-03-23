@@ -1,17 +1,27 @@
 <article>
   <h4>{{article.title}}</h4>
-  <img
-    class="images-art"
-    src="/images/{{article.imagesactions.0.filename}}"
-    alt="{{article.title}}"
-  />
+  <div class="images-container">
+    <img
+      class="images"
+      src="/images/{{article.imagesactions.0.filename}}"
+      alt="{{article.title}}"
+    />
+  </div>
   <p class="article-text">{{article.article_text}}</p>
+  <div class="images-container">
+    <img
+      class="images"
+      src="/images/{{article.imagesboxes.0.filename}}"
+      alt="{{article.title}}"
+    />
+  </div>
   <p>{{article.created_at}}</p>
-  <div>
+  <div class="comments">
+    <h5>Comments:</h5>
     {{#each article.article_comments as |article_comment|}}
-      <div>
-        <p>{{comment_text}}</p>
-        <p>{{user.username}}</p>
+      <div class="comment">
+        <p class="comment-text">{{comment_text}}<span>
+            ({{user.username}})</span></p>
       </div>
     {{/each}}
   </div>
