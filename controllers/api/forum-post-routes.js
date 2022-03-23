@@ -6,14 +6,14 @@ const withAuth = require('../../utils/auth');
 // get all posts w/o authentication, includes comments
 router.get('/', (req, res) => {
     console.log('======================');
-    Post.findAll({
-        attributes: [
-            'id',
-            'post_content',
-            'title',
-            'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        ],
+    Forum_Post.findAll({
+        // attributes: [
+        //     'id',
+        //     'post_content',
+        //     'title',
+        //     'created_at',
+        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        // ],
         include: [
             {
                 model: Forum_Comment,
@@ -37,17 +37,17 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-    Post.findOne({
+    Forum_Post.findOne({
         where: {
             id: req.params.id
         },
-        attributes: [
-            'id',
-            'post_content',
-            'title',
-            'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        ],
+        // attributes: [
+        //     'id',
+        //     'post_content',
+        //     'title',
+        //     'created_at',
+        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        // ],
         include: [
             {
                 model: Forum_Comment,
@@ -78,7 +78,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
     // expects post title and post content
-    Post.create({
+    Forum_Post.create({
         title: req.body.title,
         post_content: req.body.post_content,
         user_id: req.session.user_id
@@ -90,18 +90,18 @@ router.post('/', withAuth, (req, res) => {
         });
 });
 
-router.put('/upvote', withAuth, (req, res) => {
-    // custom static method created in models/Post.js
-    Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-        .then(updatedVoteData => res.json(updatedVoteData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+// router.put('/upvote', withAuth, (req, res) => {
+//     // custom static method created in models/Post.js
+//     Forum_Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+//         .then(updatedVoteData => res.json(updatedVoteData))
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 
 router.put('/:id', withAuth, (req, res) => {
-    Post.update(
+    Forum_Post.update(
         {
             title: req.body.title
         },
