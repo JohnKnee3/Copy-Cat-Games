@@ -1,37 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // create our Post model
-class Forum_Post extends Model {
-    // static upvote(body, models) {
-    //     return models.Vote.create({
-    //         user_id: body.user_id,
-    //         post_id: body.post_id
-    //     }).then(() => {
-    //         return Post.findOne({
-    //             where: {
-    //                 id: body.post_id
-    //             },
-    //             attributes: [
-    //                 'id',
-    //                 'post_content',
-    //                 'title',
-    //                 'created_at',
-    //                 [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-    //             ],
-    //             include: [
-    //                 {
-    //                     model: models.Forum_Comment,
-    //                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //                     include: {
-    //                         model: models.User,
-    //                         attributes: ['username']
-    //                     }
-    //                 }
-    //             ]
-    //         });
-    //     });
-    // }
-}
+class Forum_Post extends Model {}
 
 // Post model columns
 Forum_Post.init(
@@ -62,7 +32,7 @@ Forum_Post.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post'
+        modelName: 'forum_post'
     }
 );
 
