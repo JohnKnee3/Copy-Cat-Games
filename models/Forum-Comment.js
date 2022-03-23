@@ -28,7 +28,7 @@ Forum_Comment.init(
         post_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'post',
+                model: 'forum_post',
                 key: 'id'
             }
         }
@@ -37,7 +37,7 @@ Forum_Comment.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'comment'
+        modelName: 'forum_comment'
     }
 );
 

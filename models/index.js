@@ -61,6 +61,7 @@ Article.hasMany(Article_Comment, {
 
 
 // start of forum connections:
+
 User.hasMany(Forum_Post, {
   foreignKey: 'user_id'
 });
