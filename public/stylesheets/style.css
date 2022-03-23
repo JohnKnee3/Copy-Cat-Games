@@ -151,6 +151,8 @@ h4 {
   border-radius: 25px;
 }
 .article-text {
+  display: flex;
+  flex-wrap: wrap;
   font-size: 1.5rem;
   line-height: 2;
   margin: 20px 0px;
@@ -162,11 +164,28 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin: 50px;
+  margin: 30px;
 }
 .comment-text {
   margin: 20px 0px;
 }
 h5 {
   font-size: 1.5rem;
+}
+h5 span {
+  font-size: 0.75rem;
+}
+#new-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#new-comment button {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-size: 1.25rem;
+  padding: 5px;
+  margin-top: 2.5px;
 }
