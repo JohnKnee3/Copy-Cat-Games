@@ -36,8 +36,7 @@ router.get("/login", (req, res) => {
 
 //trying to go to the store
 router.get("/store", (req, res) => {
-
-  res.render("store");
+  res.render("store", { loggedIn: req.session.loggedIn });
 });
 
 //Get one article
