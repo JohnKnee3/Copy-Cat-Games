@@ -7,7 +7,7 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, (req, res) => {
     console.log(req.session);
     console.log('======================');
-    Post.findAll({
+    Forum_Post.findAll({
         where: {
             user_id: req.session.user_id
         },
@@ -20,7 +20,7 @@ router.get('/', withAuth, (req, res) => {
         // ],
         include: [
             {
-                model: Comment,
+                model: Forum_Comment,
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
@@ -45,7 +45,7 @@ router.get('/', withAuth, (req, res) => {
 
 router.get('/edit/:id', withAuth, (req, res) => {
     // find by primary key
-    Post.findByPk(req.params.id, {
+    Forum_Post.findByPk(req.params.id, {
         // attributes: [
         //     'id',
         //     'post_content',

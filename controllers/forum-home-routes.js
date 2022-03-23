@@ -1,21 +1,21 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Forum_Post, User, Forum_Comment, Forum_Vote } = require('../models');
+const { Forum_Post, User, Forum_Comment } = require('../models');
 
 // get all posts for homepage
 router.get('/', (req, res) => {
     console.log('======================');
-    Post.findAll({
-        attributes: [
-            'id',
-            'post_content',
-            'title',
-            'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        ],
+    Forum_Post.findAll({
+        // attributes: [
+        //     'id',
+        //     'post_content',
+        //     'title',
+        //     'created_at',
+        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        // ],
         include: [
             {
-                model: Comment,
+                model: Forum_Comment,
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
@@ -44,17 +44,17 @@ router.get('/', (req, res) => {
 
 // get single post
 router.get('/post/:id', (req, res) => {
-    Post.findOne({
+    Forum_Post.findOne({
         where: {
             id: req.params.id
         },
-        attributes: [
-            'id',
-            'post_content',
-            'title',
-            'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        ],
+        // attributes: [
+        //     'id',
+        //     'post_content',
+        //     'title',
+        //     'created_at',
+        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        // ],
         include: [
             {
                 model: Forum_Comment,
@@ -89,13 +89,13 @@ router.get('/post/:id', (req, res) => {
         });
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
+// router.get('/login', (req, res) => {
+//     if (req.session.loggedIn) {
+//         res.redirect('/');
+//         return;
+//     }
 
-    res.render('login');
-});
+//     res.render('login');
+// });
 
 module.exports = router;
