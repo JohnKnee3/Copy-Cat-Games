@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const sequelize = require("../../config/connection");
 const { Article, User, Article_Comment, Images } = require("../../models");
 
 // get all articles

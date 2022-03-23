@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
       const articles = dbArticleData.map((article) =>
         article.get({ plain: true })
       );
-      res.render("homepage", { articles });
+      res.render("homepage", { articles, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -35,7 +35,7 @@ router.get("/login", (req, res) => {
 });
 
 //Get one article
-router.get("/:id", (req, res) => {
+router.get("/article/:id", (req, res) => {
   Article.findOne({
     where: {
       id: req.params.id,
@@ -64,7 +64,7 @@ router.get("/:id", (req, res) => {
   })
     .then((dbArticleData) => {
       const article = dbArticleData.get({ plain: true });
-      res.render("aticles", { article });
+      res.render("aticles", { article, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
