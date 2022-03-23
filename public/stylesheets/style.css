@@ -3,11 +3,15 @@
   margin: 0px;
   box-sizing: border-box;
 }
+:root {
+  --primary: black;
+  --secondary: blanchedalmond;
+}
 body {
-  background-color: blanchedalmond;
+  background-color: var(--secondary);
 }
 header {
-  background-color: black;
+  background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -18,7 +22,7 @@ h1 {
   margin: 20px;
 }
 h1 a {
-  color: blanchedalmond;
+  color: var(--secondary);
   text-decoration: none;
   font-family: "Smokum", cursive;
   font-size: 3rem;
@@ -34,7 +38,7 @@ h2 {
   margin: 20px;
 }
 h2 a {
-  color: blanchedalmond;
+  color: var(--secondary);
   text-decoration: none;
   font-family: "Smokum", cursive;
   font-size: 2rem;
@@ -64,11 +68,11 @@ h3 {
   margin: 10px 0px;
 }
 h3 a {
-  color: black;
+  color: var(--primary);
   text-decoration: none;
 }
 footer {
-  background-color: black;
+  background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -76,9 +80,42 @@ footer {
   margin-top: 10px;
 }
 h6 {
-  color: blanchedalmond;
+  color: var(--secondary);
   font-family: "Smokum", cursive;
   font-size: 1.5rem;
   padding: 10px;
   font-weight: normal;
+}
+.login-logout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px 0px;
+}
+.form-label-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 10px 0px;
+}
+.form-label {
+  font-size: 2rem;
+}
+.form-input {
+  width: 500px;
+  font-size: 2rem;
+}
+.form-button {
+  width: 500px;
+  font-size: 2rem;
+  background-color: var(--primary);
+  color: var(--secondary);
 }

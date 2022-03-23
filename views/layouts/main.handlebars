@@ -18,7 +18,12 @@
       <nav>
         <h2><a href="/">Forums</a></h2>
         <h2><a href="/">Store</a></h2>
-        <h2><a href="/">Login</a></h2>
+        {{#if loggedIn}}
+          <h2><a href="/">Logout</a></h2>
+          --}}
+        {{else}}
+          <h2><a href="/login">Login</a></h2>
+        {{/if}}
       </nav>
     </header>
     <main>
@@ -27,5 +32,8 @@
     <footer>
       <h6>Created By Casey, Kole, John, and Amir</h6>
     </footer>
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>
