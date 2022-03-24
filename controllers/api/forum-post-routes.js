@@ -3,6 +3,7 @@ const sequelize = require("../../config/connection");
 const { Forum_Post, User, Forum_Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+//Gets all Forum Posts for the Forums Page
 router.get("/", (req, res) => {
   console.log("======================");
   Forum_Post.findAll({
@@ -28,6 +29,7 @@ router.get("/", (req, res) => {
     });
 });
 
+//Gets one Forum Poart when selected
 router.get("/:id", (req, res) => {
   Forum_Post.findOne({
     where: {
@@ -61,6 +63,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
+//Creats a new Forum Post if logged in
 router.post("/", withAuth, (req, res) => {
   Forum_Post.create({
     title: req.body.title,
@@ -74,6 +77,7 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
+//Updates a forum post by id
 router.put("/:id", withAuth, (req, res) => {
   Forum_Post.update(
     {
@@ -98,6 +102,7 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
+//Deletes a Forum Post
 router.delete("/:id", withAuth, (req, res) => {
   console.log("id", req.params.id);
   Forum_Post.destroy({
