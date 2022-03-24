@@ -6,12 +6,6 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     console.log('======================');
     Forum_Post.findAll({
-        attributes: [
-            'id',
-            'post_content',
-            'title',
-            'created_at'
-        ],
         include: [
             {
                 model: Forum_Comment,
@@ -39,12 +33,6 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        attributes: [
-            'id',
-            'post_content',
-            'title',
-            'created_at',
-        ],
         include: [
             {
                 model: Forum_Comment,

@@ -9,12 +9,6 @@ const { Forum_Post, User, Forum_Comment } = require('../models');
 router.get('/', (req, res) => {
     console.log('======================');
     Forum_Post.findAll({
-        attributes: [
-            'id',
-            'post_content',
-            'title',
-            'created_at',
-        ],
         include: [
             {
                 model: Forum_Comment,
@@ -50,6 +44,7 @@ router.get('/post/:id', (req, res) => {
         where: {
             id: req.params.id
         },
+<<<<<<< HEAD
         attributes: [
             'id',
             'post_content',
@@ -60,6 +55,8 @@ router.get('/post/:id', (req, res) => {
 =======
 >>>>>>> feature/forum
         ],
+=======
+>>>>>>> feature/forum
         include: [
             {
                 model: Forum_Comment,
