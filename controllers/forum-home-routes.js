@@ -59,7 +59,7 @@ router.get('/login', (req, res) => {
 });
 
 // get all posts for homepage
-router.get('/forum', (req, res) => {
+router.get('/', (req, res) => {
     console.log('======================');
     Post.findAll({
         attributes: [
