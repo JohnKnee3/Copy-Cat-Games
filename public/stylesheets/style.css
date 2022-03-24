@@ -172,8 +172,8 @@ h4 {
 h5 {
   font-size: 1.5rem;
 }
-h5 span {
-  font-size: 0.75rem;
+.comments {
+  font-size: 1rem;
 }
 #new-comment {
   display: flex;
@@ -182,10 +182,17 @@ h5 span {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+#new-comment textarea {
+  font-size: 1rem;
+  padding: 5px;
+}
 #new-comment button {
   background-color: var(--primary);
   color: var(--secondary);
   font-size: 1.25rem;
   padding: 5px;
   margin-top: 2.5px;
+}
+.comments-display {
+  margin-top: 20px;
 }
