@@ -6,16 +6,6 @@ const Images = require("./Images");
 const Forum_Comment = require("./Forum-Comment");
 const Forum_Post = require("./Forum-Post");
 
-// create associations
-// User.hasMany(Post, {
-//   foreignKey: "user_id",
-// });
-
-// Post.belongsTo(User, {
-//   foreignKey: "user_id",
-//   onDelete: "SET NULL",
-// });
-
 User.hasMany(Article_Comment, {
   foreignKey: "user_id",
   onDelete: "SET NULL",

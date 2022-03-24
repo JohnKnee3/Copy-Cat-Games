@@ -35,17 +35,15 @@ router.get("/:id", (req, res) => {
           attributes: ["title"],
         },
       },
+      {
+        model: Forum_Comment,
+        attributes: ["id", "comment_text", "created_at"],
+        include: {
+          model: Forum_Post,
+          attributes: ["title"],
+        },
+      },
     ],
-    // include: [
-    //   {
-    //     model: Forum_Comment,
-    //     attributes: ["id", "comment_text", "created_at"],
-    //     include: {
-    //       model: Forum_Post,
-    //       attributes: ["title"],
-    //     },
-    //   },
-    // ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {
