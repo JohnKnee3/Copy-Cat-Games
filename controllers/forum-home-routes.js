@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
 
-            res.render('forum', {
+            res.render('forum-homepage', {
                 posts,
                 loggedIn: req.session.loggedIn
             });
@@ -96,7 +96,7 @@ router.get('/login', (req, res) => {
 });
 
 // get all posts for homepage
-router.get('/getallforum', (req, res) => {
+/* router.get('/', (req, res) => {
     console.log('======================');
     Post.findAll({
         attributes: [
@@ -133,7 +133,7 @@ router.get('/getallforum', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
-});
+}); */
 
 // catch all route for get * 404
 
