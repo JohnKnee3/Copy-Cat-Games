@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Forum_Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+//Gets all Comments
 router.get("/", (req, res) => {
   Forum_Comment.findAll()
     .then((dbCommentData) => res.json(dbCommentData))
@@ -11,6 +12,7 @@ router.get("/", (req, res) => {
     });
 });
 
+//Creates a new Comment on the forum post you are on
 router.post("/", withAuth, (req, res) => {
   Forum_Comment.create({
     comment_text: req.body.comment_text,
@@ -24,6 +26,7 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
+//Deletes a comment
 router.delete("/:id", withAuth, (req, res) => {
   Forum_Comment.destroy({
     where: {
