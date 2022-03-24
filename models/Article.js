@@ -16,7 +16,14 @@ Article.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    article_text: {
+    article_text_1: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1],
+      },
+    },
+    article_text_2: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
