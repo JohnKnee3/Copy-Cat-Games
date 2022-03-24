@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const sequelize = require("../../config/connection");
 const { Article, User, Article_Comment, Images } = require("../../models");
 
 // get all articles
@@ -26,7 +27,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title", "article_text", "created_at"],
+    attributes: ["id", "title", "article_text_1", "article_text_2"],
     include: [
       { model: Images, attributes: ["filename"] },
       {

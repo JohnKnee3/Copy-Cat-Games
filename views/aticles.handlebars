@@ -1,0 +1,44 @@
+<article>
+  <h4>{{article.title}}</h4>
+  <div class="images-container">
+    <img
+      class="images"
+      src="/images/{{article.images.0.filename}}"
+      alt="{{article.title}}"
+    />
+  </div>
+  <p class="article-text">{{article.article_text_1}}</p>
+  <div class="images-container">
+    <img
+      class="images"
+      src="/images/{{article.images.2.filename}}"
+      alt="{{article.title}}"
+    />
+  </div>
+  <p class="article-text">{{article.article_text_2}}</p>
+  <div class="comments">
+    <h5>Comments: <span>(must be logged in to leave comments)</span></h5>
+    {{#if loggedIn}}
+      <form id="new-comment">
+        <textarea
+          name="comment-area"
+          id="comment-area"
+          cols="50"
+          rows="5"
+        ></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    {{else}}
+      <h2>Logged Out</h2>
+    {{/if}}
+    {{#each article.article_comments as |article_comment|}}
+      <div class="comment">
+        <p class="comment-text">{{comment_text}}<span>
+            ({{user.username}})</span></p>
+      </div>
+    {{/each}}
+  </div>
+</article>
+{{#if loggedIn}}
+  <script src="/js/article_comment.js"></script>
+{{/if}}

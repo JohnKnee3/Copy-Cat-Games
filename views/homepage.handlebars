@@ -1,0 +1,12 @@
+{{#each articles as |article|}}
+  <a class="games" href="/article/{{id}}">
+    <img
+      class="images-art"
+      src="/images/{{article.images.0.filename}}"
+      alt="{{article.title}}"
+    />
+    <h3>
+      {{article.title}}
+    </h3>
+  </a>
+{{/each}}

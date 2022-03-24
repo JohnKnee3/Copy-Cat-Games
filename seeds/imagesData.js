@@ -27,15 +27,15 @@ const imagedata = [
   },
   {
     article_id: 3,
-    filename: "Cosimic-Art.jpg",
+    filename: "Cosmic-Art.jpg",
   },
   {
     article_id: 3,
-    filename: "Cosimic-Box.jpg",
+    filename: "Cosmic-Box.jpg",
   },
   {
     article_id: 3,
-    filename: "Cosimic-Action.jpg",
+    filename: "Cosmic-Action.jpg",
   },
   {
     article_id: 4,
