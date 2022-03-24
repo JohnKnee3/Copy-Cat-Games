@@ -20,11 +20,12 @@ const userdata = [
     email: "lovelove@yahoo.com",
     password: "123456",
   },
-  // {
-  //   username: "chai",
-  //   email: "chai@yahoo.com",
-  //   password: "123456",
-  // }
+  {
+    id: "e8b59396-5f08-4242-afc8-b9a3b0f4964d",
+    username: "Chai",
+    email: "chai@yahoo.com",
+    password: "123456",
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userdata, { individualHooks: true });
