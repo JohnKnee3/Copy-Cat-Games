@@ -3,7 +3,7 @@ const { Images } = require("../models");
 const imagedata = [
   {
     article_id: 1,
-    filename: "Long-Shot-Art.png",
+    filename: "Long-Shot-Art.jpg",
   },
   {
     article_id: 1,
@@ -19,7 +19,7 @@ const imagedata = [
   },
   {
     article_id: 2,
-    filename: "TI-Box.png",
+    filename: "TI-Box.jpg",
   },
   {
     article_id: 2,
@@ -35,7 +35,7 @@ const imagedata = [
   },
   {
     article_id: 3,
-    filename: "Cosmic-Action.jpg",
+    filename: "Cosmic-Action.png",
   },
   {
     article_id: 4,
