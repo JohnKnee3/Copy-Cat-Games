@@ -62,7 +62,7 @@ Forum_Comment.belongsTo(User, {
 
 Forum_Comment.belongsTo(Forum_Post, {
   foreignKey: "post_id",
-  onDelete: "SET NULL",
+  onDelete: "CASCADE",
 });
 
 User.hasMany(Forum_Comment, {
@@ -72,6 +72,7 @@ User.hasMany(Forum_Comment, {
 
 Forum_Post.hasMany(Forum_Comment, {
   foreignKey: "post_id",
+  onDelete: "CASCADE",
 });
 
 module.exports = {
