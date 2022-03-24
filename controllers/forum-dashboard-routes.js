@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { Forum_Post, User, Forum_Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+<<<<<<< HEAD
 
 
 router.get('/edit/:id', withAuth, (req, res) => {
@@ -15,6 +16,54 @@ router.get('/edit/:id', withAuth, (req, res) => {
         //     'created_at',
         //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
         // ],
+=======
+router.get('/', withAuth, (req, res) => {
+    console.log(req.session);
+    console.log('======================');
+    Forum_Post.findAll({
+        where: {
+            user_id: req.session.user_id
+        },
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at',
+        ],
+        include: [
+            {
+                model: Forum_Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+        .then(dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            res.render('dashboard', { posts, loggedIn: true });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.get('/edit/:id', withAuth, (req, res) => {
+    Forum_Post.findByPk(req.params.id, {
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at',
+        ],
+>>>>>>> feature/forum
         include: [
             {
                 model: Forum_Comment,

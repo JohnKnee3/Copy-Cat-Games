@@ -1,8 +1,50 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
+<<<<<<< HEAD
 const { Forum_Post, User, Forum_Comment, Forum_Vote } = require('../models');
+=======
+const { Forum_Post, User, Forum_Comment } = require('../models');
 
-// get single post
+// get all posts for homepage
+router.get('/', (req, res) => {
+    console.log('======================');
+    Forum_Post.findAll({
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at',
+        ],
+        include: [
+            {
+                model: Forum_Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+        .then(dbPostData => {
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+
+            res.render('forum', {
+                posts,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+>>>>>>> feature/forum
+
 router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -13,7 +55,10 @@ router.get('/post/:id', (req, res) => {
             'post_content',
             'title',
             'created_at',
+<<<<<<< HEAD
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+=======
+>>>>>>> feature/forum
         ],
         include: [
             {
