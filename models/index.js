@@ -6,16 +6,6 @@ const Images = require("./Images");
 const Forum_Comment = require("./Forum-Comment");
 const Forum_Post = require("./Forum-Post");
 
-// create associations
-// User.hasMany(Post, {
-//   foreignKey: "user_id",
-// });
-
-// Post.belongsTo(User, {
-//   foreignKey: "user_id",
-//   onDelete: "SET NULL",
-// });
-
 User.hasMany(Article_Comment, {
   foreignKey: "user_id",
   onDelete: "SET NULL",
@@ -62,7 +52,7 @@ Forum_Comment.belongsTo(User, {
 
 Forum_Comment.belongsTo(Forum_Post, {
   foreignKey: "post_id",
-  onDelete: "SET NULL",
+  onDelete: "CASCADE",
 });
 
 User.hasMany(Forum_Comment, {
@@ -72,6 +62,7 @@ User.hasMany(Forum_Comment, {
 
 Forum_Post.hasMany(Forum_Comment, {
   foreignKey: "post_id",
+  onDelete: "CASCADE",
 });
 
 module.exports = {
