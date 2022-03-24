@@ -6,13 +6,12 @@ const withAuth = require('../../utils/auth');
 router.get('/', (req, res) => {
     console.log('======================');
     Forum_Post.findAll({
-        // attributes: [
-        //     'id',
-        //     'post_content',
-        //     'title',
-        //     'created_at'
-        //     // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        // ],
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at'
+        ],
         include: [
             {
                 model: Forum_Comment,
@@ -40,13 +39,12 @@ router.get('/:id', (req, res) => {
         where: {
             id: req.params.id
         },
-        // attributes: [
-        //     'id',
-        //     'post_content',
-        //     'title',
-        //     'created_at',
-        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        // ],
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at',
+        ],
         include: [
             {
                 model: Forum_Comment,
@@ -76,7 +74,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-    // expects post title and post content
     Forum_Post.create({
         title: req.body.title,
         post_content: req.body.post_content,
@@ -88,16 +85,6 @@ router.post('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
-
-// router.put('/upvote', withAuth, (req, res) => {
-//     // custom static method created in models/Post.js
-//     Forum_Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
-//         .then(updatedVoteData => res.json(updatedVoteData))
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
 
 router.put('/:id', withAuth, (req, res) => {
     Forum_Post.update(

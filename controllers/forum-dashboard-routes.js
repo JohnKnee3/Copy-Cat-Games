@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 const { Forum_Post, User, Forum_Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all posts for dashboard
 router.get('/', withAuth, (req, res) => {
     console.log(req.session);
     console.log('======================');
@@ -11,13 +10,12 @@ router.get('/', withAuth, (req, res) => {
         where: {
             user_id: req.session.user_id
         },
-        // attributes: [
-        //     'id',
-        //     'post_content',
-        //     'title',
-        //     'created_at',
-        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        // ],
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at',
+        ],
         include: [
             {
                 model: Forum_Comment,
@@ -44,15 +42,13 @@ router.get('/', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-    // find by primary key
     Forum_Post.findByPk(req.params.id, {
-        // attributes: [
-        //     'id',
-        //     'post_content',
-        //     'title',
-        //     'created_at',
-        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        // ],
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at',
+        ],
         include: [
             {
                 model: Forum_Comment,

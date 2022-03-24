@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Forum_Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// gets all comments
 router.get('/', (req, res) => {
     Forum_Comment.findAll()
         .then(dbCommentData => res.json(dbCommentData))
@@ -13,7 +12,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-    // posts comment only if the user is logged in
     Forum_Comment.create({
         comment_text: req.body.comment_text,
         user_id: req.session.user_id,
@@ -27,7 +25,6 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.delete('/:id', withAuth, (req, res) => {
-    // deletes comment only if user is logged in / withAuth
     Forum_Comment.destroy({
         where: {
             id: req.params.id

@@ -6,13 +6,12 @@ const { Forum_Post, User, Forum_Comment } = require('../models');
 router.get('/', (req, res) => {
     console.log('======================');
     Forum_Post.findAll({
-        // attributes: [
-        //     'id',
-        //     'post_content',
-        //     'title',
-        //     'created_at',
-        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        // ],
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at',
+        ],
         include: [
             {
                 model: Forum_Comment,
@@ -42,19 +41,17 @@ router.get('/', (req, res) => {
         });
 });
 
-// get single post
 router.get('/post/:id', (req, res) => {
     Forum_Post.findOne({
         where: {
             id: req.params.id
         },
-        // attributes: [
-        //     'id',
-        //     'post_content',
-        //     'title',
-        //     'created_at',
-        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        // ],
+        attributes: [
+            'id',
+            'post_content',
+            'title',
+            'created_at',
+        ],
         include: [
             {
                 model: Forum_Comment,
