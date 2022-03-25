@@ -1,16 +1,31 @@
+<div class="threads">
+  <h3>
+    {{post.title}}
+  </h3>
+  <h7 id="threadPoster">Posted by {{post.user.username}}</h7>
 
-<div>
-  <h2>{{username}}</h2>
-  <p>Posted at {{created_at}}</p>
-  <p>{{comment_text}}</p>
+  <p id="ThreadContent">{{post_content}}</p>
+  <h4></h4>
 </div>
 
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
+<div class="comments">
+  <h5>Comments:</h5>
+  {{#if loggedIn}}
+  <form id="new-comment">
+    <textarea name="comment-area" id="comment-area" cols="50" rows="5"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+  {{else}}
+  <p>You Must <a href="/login">Login</a> to Leave Comments!</p>
+  {{/if}}
+  <div class="comments-display">
+    {{#each Forum_Comment as |Forum_Comment|}}
+    <p class="comment-text">{{comment_text}}<span>
+        ({{user.username}})</span></p>
+    {{/each}}
   </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
+</div>
+</article>
+{{#if loggedIn}}
+<script src="/js/article_comment.js"></script>
+{{/if}}
