@@ -196,3 +196,30 @@ h5 {
 .comments-display {
   margin-top: 20px;
 }
+
+/* forum css below */
+
+.threads {
+  display: block;
+  height: auto;
+  margin-left: 25%;
+  margin-right: 25%;
+  min-width: 50%;
+  color: black;
+  text-decoration: none;
+}
+
+#threadLink {
+  color: black;
+  text-decoration: underline;
+}
+
+#threadPoster {
+  color: black;
+  text-decoration: none;
+}
+
+#ThreadContent {
+  color: black;
+  text-decoration: none;
+}

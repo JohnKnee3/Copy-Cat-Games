@@ -1,9 +1,13 @@
 {{#each posts as |post|}}
-  <a class="threads" href="/post/{{id}}">
+<div class="threads">
+  <a id ="threadLink" href="/post/{{id}}">
     <h3>
       {{post.title}}
     </h3>
-    <p>{{comment_text}}</p>
-    <p>posted by {{user_id}} at {{created_at}}</p>
-  </a>
+    </a>
+    <h7 id="threadPoster">Posted by {{post.user.username}}</h7>
+
+    <p id="ThreadContent">{{post_content}}</p>
+    <h4></h4>
+</div>
 {{/each}}

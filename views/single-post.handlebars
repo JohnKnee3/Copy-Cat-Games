@@ -1,6 +1,10 @@
-{{> post-info post}}
 
-{{#if loggedIn}}
+<div>
+  <h2>{{username}}</h2>
+  <p>Posted at {{created_at}}</p>
+  <p>{{comment_text}}</p>
+</div>
+
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
@@ -10,11 +14,3 @@
     <button type="submit">add comment</button>
   </div>
 </form>
-{{/if}}
-
-{{> comments post.comments}}
-
-{{#if loggedIn}}
-<script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
-{{/if}}
