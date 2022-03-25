@@ -64,6 +64,17 @@ main {
   height: 300px;
   width: 500px;
   border-radius: 25px;
+  filter: drop-shadow(5px 10px 10px #121212);
+
+  transition: transform .2s;
+}
+/* zoom animation to images on homepage */
+.images-art:hover {
+  transform: scale(1.05);
+}
+
+#homepage-icon-titles {
+  margin-top: 15px;
 }
 h3 {
   margin: 10px 0px;
