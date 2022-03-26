@@ -35,7 +35,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/post/:id", (req, res) => {
+router.get("/forum-post/:id", (req, res) => {
   Forum_Post.findOne({
     where: {
       id: req.params.id,
