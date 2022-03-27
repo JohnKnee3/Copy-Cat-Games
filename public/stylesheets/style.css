@@ -4,30 +4,51 @@
   box-sizing: border-box;
 }
 :root {
-  --primary: black;
+  --primary: white;
   --secondary: rgb(237, 237, 237);
+  --font: Helvetica, sans-serif;
 }
 body {
-  background-color: var(--secondary);
+  background-color: var(--primary);
 }
 header {
-  background-color: var(--primary);
+  background-color: #E6E6E6;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  border-bottom: 5px solid #0A598A;
 }
+
+#logoAndTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#logo {
+   height: 10%;
+   width: 10%;
+ }
+
 h1 {
   margin: 20px;
 }
+
 h1 a {
-  color: var(--secondary);
+  color: #0A598A;
   text-decoration: none;
-  font-family: "Smokum", cursive;
+  font-family: var(--font);
   font-size: 3rem;
   font-weight: normal;
 }
+
+h1 a:hover {
+  color: #2488C6;
+}
+
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -38,12 +59,16 @@ h2 {
   margin: 20px;
 }
 h2 a {
-  color: var(--secondary);
+  color: #0A598A;
   text-decoration: none;
-  font-family: "Smokum", cursive;
+  font-family: var(--font);
   font-size: 2rem;
   font-weight: normal;
 }
+h2 a:hover {
+  color: #2488C6;
+}
+
 main {
   display: flex;
   flex-wrap: wrap;
@@ -60,37 +85,59 @@ main {
   margin: 20px;
   text-decoration: none;
 }
-.images-art {
-  height: 300px;
-  width: 500px;
-  border-radius: 25px;
-  filter: drop-shadow(5px 10px 10px #121212);
 
+.games:hover{
+  transform: scale(1.05);
+}
+
+.games > h3 {
+  color: #0A598A;
+}
+
+.games:hover > h3 {
+  color: #2488C6;
+}
+
+.games:hover > #homepage-icon-titles {
+  color:#2488C6
+} 
+
+.images-art {
+  height: 75%;
+  width: 75%;
+  border-radius: 25px;
   transition: transform .2s;
 }
-/* zoom animation to images on homepage */
-.images-art:hover {
-  transform: scale(1.05);
+
+/* homepage-images-art was created so the store images and article images didnt resize each other strangly on each corresponding page */
+.homepage-images-art{
+  height: 33vh;
+  width: 33vw;
+  border-radius: 25px;
+  transition: transform .2s;
 }
 
 #homepage-icon-titles {
   margin-top: 15px;
+  color: #0A598A;;
 }
+
 h3 {
   margin: 10px 0px;
   color: var(--primary);
 }
 footer {
-  background-color: var(--primary);
+  background-color: #E6E6E6;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  border-top: 5px solid #0A598A;
 }
 h6 {
-  color: var(--secondary);
-  font-family: "Smokum", cursive;
+  color: #0A598A;;
+  font-family: var(--font);
   font-size: 1.5rem;
   padding: 10px;
   font-weight: normal;
@@ -127,12 +174,17 @@ h6 {
 .form-button {
   width: 500px;
   font-size: 1.5rem;
-  background-color: var(--primary);
+  background-color: #0A598A;
   color: var(--secondary);
   border-radius: 10px;
   margin-top: 15px;
   padding: 10px;
 }
+
+.form-button:hover {
+  transform: scale(1.025);
+}
+
 article {
   margin: 20px 300px;
   display: flex;
@@ -234,3 +286,5 @@ h5 {
   color: black;
   text-decoration: none;
 }
+
+/* potentially cool bg here? */
