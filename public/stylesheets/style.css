@@ -126,6 +126,7 @@ h3 {
   margin: 10px 0px;
   color: var(--primary);
 }
+
 footer {
   background-color: #E6E6E6;
   display: flex;
@@ -285,6 +286,15 @@ h5 {
 #ThreadContent {
   color: black;
   text-decoration: none;
+}
+
+.forumTitle {
+color: #0A598A;
+}
+
+.forumTitle:hover {
+  color: #2488C6;
+  transform: scale(1.0025);
 }
 
 /* potentially cool bg here? */
