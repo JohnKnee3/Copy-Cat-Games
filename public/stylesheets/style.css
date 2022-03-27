@@ -33,6 +33,15 @@ header {
    width: 10%;
  }
 
+#myCarousel {
+  width: 80vw;
+  height: auto;
+}
+
+#banner {
+border-radius: 25px;
+}
+
 h1 {
   margin: 20px;
 }
