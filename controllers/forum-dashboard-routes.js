@@ -27,7 +27,7 @@ router.get("/", withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render("dashboard", { posts, loggedIn: true });
+      res.render("forum-dashboard", { posts, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
@@ -101,7 +101,7 @@ router.get('/', withAuth, (req, res) => {
     })
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { posts, loggedIn: true });
+            res.render('forum-dashboard', { posts, loggedIn: true });
         })
         .catch(err => {
             console.log(err);
