@@ -2,6 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Forum_Post, User, Forum_Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
+const withAdmin = require("../../utils/admin");
 
 //Gets all Forum Posts for the Forums Page
 router.get("/", (req, res) => {
@@ -78,7 +79,7 @@ router.post("/", withAuth, (req, res) => {
 });
 
 //Updates a forum post by id
-router.put("/:id", withAuth, (req, res) => {
+router.put("/:id", withAdmin, (req, res) => {
   Forum_Post.update(
     {
       title: req.body.title,
@@ -103,7 +104,7 @@ router.put("/:id", withAuth, (req, res) => {
 });
 
 //Deletes a Forum Post
-router.delete("/:id", withAuth, (req, res) => {
+router.delete("/:id", withAdmin, (req, res) => {
   console.log("id", req.params.id);
   Forum_Post.destroy({
     where: {
