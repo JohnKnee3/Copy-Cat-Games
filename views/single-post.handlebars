@@ -8,10 +8,8 @@
   <h4></h4>
 </div>
 
-<div class="comments">
-  <h5>Comments:</h5>
-  <div class="comments-display">
-    {{#if loggedIn}}
+
+{{#if loggedIn}}
     <form id="new-comment">
       <textarea name="comment-area" id="comment-area" cols="50" rows="5" placeholder="Say Something Nice"></textarea>
       <button type="submit">Submit</button>
@@ -19,9 +17,14 @@
     {{else}}
     <p>You Must <a href="/login">Login</a> to Leave Comments!</p>
     {{/if}}
+
+<div class="comments">
+  <h5>Comments:</h5>
+  <div class="comments-display">
+    
     {{#each post.forum_comments as |Forum_Comment|}}
     <p class="comment-text">{{comment_text}}<span>
-        ({{user.username}}) {{format_date created_at}}</span></p>
+        ({{user.username}} {{format_date created_at}})</span></p>
     {{/each}}
     
   </div>
