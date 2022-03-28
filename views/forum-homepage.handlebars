@@ -19,12 +19,14 @@
     </a>
     <h7 id="threadPoster">Posted by
       {{user.username}}
+      at
       {{format_date createdAt}}
-      comment(s)
+      has
       {{forum_comments.length}}
+      {{format_plural "comment" forum_comments.length}}
     </h7>
 
-    <p id="ThreadContent">{{post_content}}</p>
+    <p id="ThreadContent">{{post_tease post_content}}...</p>
     <h4></h4>
   </div>
 {{/each}}
