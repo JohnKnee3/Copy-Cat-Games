@@ -247,6 +247,9 @@ h5 {
 }
 .comments {
   font-size: 1rem;
+  background-color: #E6E6E6;
+  border: 5px solid #0A598A;
+  padding: 10px;
 }
 #new-comment {
   display: flex;
@@ -259,12 +262,17 @@ h5 {
   font-size: 1rem;
   padding: 5px;
 }
+
 #new-comment button {
-  background-color: var(--primary);
+  background-color: #0A598A;
   color: var(--secondary);
   font-size: 1.25rem;
   padding: 5px;
   margin-top: 2.5px;
+}
+
+#new-comment button:hover {
+  transform: scale(1.025);
 }
 .comments-display {
   margin-top: 20px;
@@ -299,6 +307,10 @@ h5 {
 
 .forumTitle {
 color: #0A598A;
+}
+
+#threadTitle {
+color: #0A598A !important;
 }
 
 .forumTitle:hover {
