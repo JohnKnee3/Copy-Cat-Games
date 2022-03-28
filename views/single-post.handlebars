@@ -2,7 +2,7 @@
   <h3 id="threadTitle">
     {{post.title}}
   </h3>
-  <h7 id="threadPoster">Posted by {{post.user.username}} at {{!-- {{post.time created wait for john}} --}}</h7>
+  <h7 id="threadPoster">Posted by {{post.user.username}} at {{format_date post.createdAt}} {{!-- {{post.time created wait for john}} --}}</h7>
 
   <p id="ThreadContent">{{post.post_content}}</p>
   <h4></h4>
@@ -11,10 +11,6 @@
 <div class="comments">
   <h5>Comments:</h5>
   <div class="comments-display">
-    {{#each Forum_Comment as |Forum_Comment|}}
-    <p class="comment-text">{{comment_text}}<span>
-        ({{user.username}})</span></p>
-    {{/each}}
     {{#if loggedIn}}
     <form id="new-comment">
       <textarea name="comment-area" id="comment-area" cols="50" rows="5"></textarea>
@@ -23,6 +19,11 @@
     {{else}}
     <p>You Must <a href="/login">Login</a> to Leave Comments!</p>
     {{/if}}
+    {{#each post.forum_comments as |Forum_Comment|}}
+    <p class="comment-text">{{comment_text}}<span>
+        ({{user.username}}) {{format_date created_at}}</span></p>
+    {{/each}}
+    
   </div>
 </div>
 </article>
