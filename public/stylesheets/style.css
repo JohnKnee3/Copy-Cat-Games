@@ -56,6 +56,7 @@ h1 a {
 
 h1 a:hover {
   color: #2488C6;
+  text-decoration: none;
 }
 
 nav {
@@ -108,7 +109,8 @@ main {
 }
 
 .games:hover > #homepage-icon-titles {
-  color:#2488C6
+  color:#2488C6;
+  text-decoration: none;
 } 
 
 .images-art {
@@ -128,7 +130,8 @@ main {
 
 #homepage-icon-titles {
   margin-top: 15px;
-  color: #0A598A;;
+  color: #0A598A;
+  text-decoration: none;
 }
 
 h3 {
@@ -307,6 +310,7 @@ h5 {
 
 .forumTitle {
 color: #0A598A;
+text-decoration: none !important;
 }
 
 #threadTitle {
@@ -316,6 +320,7 @@ color: #0A598A !important;
 .forumTitle:hover {
   color: #2488C6;
   transform: scale(1.0025);
+  text-decoration: underline;
 }
 
 /* potentially cool bg here? */
