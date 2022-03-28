@@ -1,0 +1,25 @@
+{{#if loggedIn}}
+<div id="createThread">
+<a href="/dashboard">
+<h2 id="threadCreation">
+  Click here to create a thread!
+</h2>
+</a>
+</div>
+  {{else}}
+  <p>You Must <a href="/login">Login</a> to create a thread!</p>
+  {{/if}}
+
+{{#each posts as |post|}}
+<div class="threads">
+  <a id ="threadLink" href="/forum/forum-post/{{id}}">
+    <h3 class="forumTitle">
+      {{post.title}}
+    </h3>
+    </a>
+    <h7 id="threadPoster">Posted by {{post.user.username}}</h7>
+
+    <p id="ThreadContent">{{post_content}}</p>
+    <h4></h4>
+</div>
+{{/each}}

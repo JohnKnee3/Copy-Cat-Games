@@ -1,12 +1,68 @@
-{{#each articles as |article|}}
-  <a class="games" href="/article/{{id}}">
-    <img
-      class="images-art"
-      src="/images/{{article.images.0.filename}}"
-      alt="{{article.title}}"
-    />
-    <h3>
-      {{article.title}}
-    </h3>
+{{!-- <div id="myCarousel" >
+  <div class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="https://boardgamegeek.com/boardgame/187719/banner-saga-warbands" target="_blank"><img
+            src="/images/bannerSagaBanner.jpg" id="banner" class="d-block w-100"
+            alt="a carousel of rotating game images, slide one"></a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://www.miniaturemarket.com/petcw-cg.html" target="_blank"><img src="/images/cthuluBanner.png" id="banner" class="d-block w-100" alt="a carousel of rotating game images, slide two"></a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://www.miniaturemarket.com/cb72600.html" target="_blank"><img src="/images/40kBanner.jpg"
+            id="banner" class="d-block w-100" alt="a carousel of rotating game images, slide three"></a>
+      </div>
+    </div>
+  </div>
+</div>        Above is the previously made carousel in case the below one breaks           --}}
+
+<div id="myCarousel" >
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <a href="https://boardgamegeek.com/boardgame/187719/banner-saga-warbands" target="_blank"><img
+            src="/images/bannerSagaBanner.jpg" id="banner" class="d-block w-100"
+            alt="a carousel of rotating game images, slide one"></a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://www.miniaturemarket.com/petcw-cg.html" target="_blank"><img src="/images/cthuluBanner.png" id="banner" class="d-block w-100" alt="a carousel of rotating game images, slide two"></a>
+      </div>
+      <div class="carousel-item">
+        <a href="https://www.miniaturemarket.com/cb72600.html" target="_blank"><img src="/images/40kBanner.jpg"
+            id="banner" class="d-block w-100" alt="a carousel of rotating game images, slide three"></a>
+      </div>
+    </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
   </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script>var myCarousel = document.querySelector('#myCarousel')
+  var carousel = new bootstrap.Carousel(myCarousel)</script>
+
+{{#each articles as |article|}}
+<a class="games" href="/article/{{id}}">
+  <img class="homepage-images-art" src="/images/{{article.images.0.filename}}" alt="{{article.title}}" />
+  <h3 id="homepage-icon-titles">
+    {{article.title}}
+  </h3>
+</a>
 {{/each}}
