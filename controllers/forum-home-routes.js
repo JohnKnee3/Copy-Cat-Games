@@ -6,6 +6,7 @@ const { Forum_Post, User, Forum_Comment } = require("../models");
 router.get("/", (req, res) => {
   console.log("======================");
   Forum_Post.findAll({
+    order: [["id", "DESC"]],
     include: [
       {
         model: Forum_Comment,
@@ -40,6 +41,7 @@ router.get("/forum-post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
+    order: [[Forum_Comment, "id"]],
     include: [
       {
         model: Forum_Comment,
@@ -74,12 +76,12 @@ router.get("/forum-post/:id", (req, res) => {
     });
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-    res.render('login');
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
 });
 
 // get all posts for homepage
