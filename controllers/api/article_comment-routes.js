@@ -30,7 +30,7 @@ router.post("/", withAuth, (req, res) => {
   }
 });
 
-//ability yo delete a comment
+//ability to delete a comment
 router.delete("/:id", withAuth, (req, res) => {
   Article_Comment.destroy({
     where: {
