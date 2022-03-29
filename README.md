@@ -1,7 +1,7 @@
 # Copy Cat Games
 
 ### Overview
-This full stack web application allows a user to view a store front for Copy Cat Games' featured products. The login of the user allows features that are not available to users that are not logged in. The application also provides a forum that adds a community aspect to the store front. The styling of the page was done using the help of Bootstrap. Page templates are provided by Handlebars. MySQL2 is used for the database. User's password information is hashed for security.
+This full stack web application allows a user to view a storefront for Copy Cat Games' featured products. The login of the user allows features that are not available to users that are not logged in. The application also provides a forum that adds a community aspect to the storefront. The styling of the page was done using the help of Bootstrap. Page templates are provided by Handlebars. MySQL2 is used for the database. User's password information is hashed for security.
 
 ### Table of Contents
 - [Overview](#overview)
@@ -28,8 +28,8 @@ This full stack web application allows a user to view a store front for Copy Cat
 
 ### How to Use
 * Enter: https://morning-spire-87893.herokuapp.com/ into your address bar.
-* Browse Copy Cat Games' store front as you wish.
-* The header will allow the user to either enter into the store fronts's forum, Store, or Login.
+* Browse Copy Cat Games' storefront as you wish.
+* The header will allow the user to either enter into the storefronts's forum, Store, or Login.
 * Creating an account and logging in will give the user exclusive access to features.
 * The store will link the user to the address where the user can purchase the chosen board game.
 * Once the user is logged in, the user can create comments on the storefront. As well as comment and post new threads in the forum.
