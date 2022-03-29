@@ -12,13 +12,13 @@ body {
   background-color: var(--primary);
 }
 header {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  border-bottom: 5px solid #0A598A;
+  border-bottom: 5px solid #0a598a;
 }
 
 #logoAndTitle {
@@ -29,17 +29,13 @@ header {
 }
 
 #logo {
-   height: 10%;
-   width: 10%;
- }
+  height: 10%;
+  width: 10%;
+}
 
 #myCarousel {
   width: 80vw;
   height: auto;
-}
-
-#banner {
-border-radius: 25px;
 }
 
 h1 {
@@ -47,7 +43,7 @@ h1 {
 }
 
 h1 a {
-  color: #0A598A;
+  color: #0a598a;
   text-decoration: none;
   font-family: var(--font);
   font-size: 3rem;
@@ -55,7 +51,7 @@ h1 a {
 }
 
 h1 a:hover {
-  color: #2488C6;
+  color: #2488c6;
   text-decoration: none;
 }
 
@@ -69,23 +65,23 @@ h2 {
   margin: 20px;
 }
 h2 a {
-  color: #0A598A;
+  color: #0a598a;
   text-decoration: none;
   font-family: var(--font);
   font-size: 2rem;
   font-weight: normal;
 }
 h2 a:hover {
-  color: #2488C6;
+  color: #2488c6;
 }
 
-main {
+/* main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   min-height: 100%;
-}
+} */
 .games {
   display: flex;
   flex-direction: column;
@@ -96,60 +92,56 @@ main {
   text-decoration: none;
 }
 
-.games:hover{
+.games:hover {
   transform: scale(1.05);
 }
 
 .games > h3 {
-  color: #0A598A;
+  color: #0a598a;
 }
 
 .games:hover > h3 {
-  color: #2488C6;
+  color: #2488c6;
 }
 
 .games:hover > #homepage-icon-titles {
-  color:#2488C6;
+  color: #2488c6;
   text-decoration: none;
-} 
+}
 
-.images-art {
+/* .images-art {
   height: 75%;
   width: 75%;
   border-radius: 25px;
-  transition: transform .2s;
-}
-
+  transition: transform 0.2s;
+} */
+/* .article {
+  width: 300px;
+} */
 /* homepage-images-art was created so the store images and article images didnt resize each other strangly on each corresponding page */
-.homepage-images-art{
-  height: 33vh;
-  width: 33vw;
-  border-radius: 25px;
-  transition: transform .2s;
+.homepage-images-art {
+  height: 150px;
+  width: 250px;
+  /* transition: transform 0.2s; */
 }
 
 #homepage-icon-titles {
   margin-top: 15px;
-  color: #0A598A;
+  color: #0a598a;
   text-decoration: none;
 }
 
-h3 {
-  margin: 10px 0px;
-  color: var(--primary);
-}
-
 footer {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  border-top: 5px solid #0A598A;
+  border-top: 5px solid #0a598a;
 }
 h6 {
-  color: #0A598A;;
+  color: #0a598a;
   font-family: var(--font);
   font-size: 1.5rem;
   padding: 10px;
@@ -187,7 +179,7 @@ h6 {
 .form-button {
   width: 500px;
   font-size: 1.5rem;
-  background-color: #0A598A;
+  background-color: #0a598a;
   color: var(--secondary);
   border-radius: 10px;
   margin-top: 15px;
@@ -198,14 +190,14 @@ h6 {
   transform: scale(1.025);
 }
 
-article {
+/* article {
   margin: 20px 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-}
+} */
 h4 {
   padding-bottom: 20px;
   width: 100%;
@@ -221,11 +213,11 @@ h4 {
   align-items: center;
   margin: 25px 0px;
 }
-.images {
+/* .images {
   height: 300px;
   width: 500px;
   border-radius: 25px;
-}
+} */
 .article-text {
   display: flex;
   flex-wrap: wrap;
@@ -250,8 +242,8 @@ h5 {
 }
 .comments {
   font-size: 1rem;
-  background-color: #E6E6E6;
-  border: 5px solid #0A598A;
+  background-color: #e6e6e6;
+  border: 5px solid #0a598a;
   padding: 10px;
 }
 #new-comment {
@@ -267,7 +259,7 @@ h5 {
 }
 
 #new-comment button {
-  background-color: #0A598A;
+  background-color: #0a598a;
   color: var(--secondary);
   font-size: 1.25rem;
   padding: 5px;
@@ -309,16 +301,16 @@ h5 {
 }
 
 .forumTitle {
-color: #0A598A;
-text-decoration: none !important;
+  color: #0a598a;
+  text-decoration: none !important;
 }
 
 #threadTitle {
-color: #0A598A !important;
+  color: #0a598a !important;
 }
 
 .forumTitle:hover {
-  color: #2488C6;
+  color: #2488c6;
   transform: scale(1.0025);
   text-decoration: underline;
 }
