@@ -1,22 +1,4 @@
-{{! <div id="myCarousel" >
-  <div class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <a href="https://boardgamegeek.com/boardgame/187719/banner-saga-warbands" target="_blank"><img
-            src="/images/bannerSagaBanner.jpg" id="banner" class="d-block w-100"
-            alt="a carousel of rotating game images, slide one"></a>
-      </div>
-      <div class="carousel-item">
-        <a href="https://www.miniaturemarket.com/petcw-cg.html" target="_blank"><img src="/images/cthuluBanner.png" id="banner" class="d-block w-100" alt="a carousel of rotating game images, slide two"></a>
-      </div>
-      <div class="carousel-item">
-        <a href="https://www.miniaturemarket.com/cb72600.html" target="_blank"><img src="/images/40kBanner.jpg"
-            id="banner" class="d-block w-100" alt="a carousel of rotating game images, slide three"></a>
-      </div>
-    </div>
-  </div>
-</div>        Above is the previously made carousel in case the below one breaks           }}
-
+{{! below is the carousel on the homepage }}
 <div id="myCarousel">
   <div
     id="carouselExampleIndicators"
@@ -88,6 +70,21 @@
   </div>
 </div>
 
+{{! below is the handlebars for the aritcles on the main page }}
+{{#each articles as |article|}}
+  <a class="games text-decoration-none" href="/article/{{id}}">
+    <img
+      class="homepage-images-art"
+      src="/images/{{article.images.0.filename}}"
+      alt="{{article.title}}"
+    />
+    <h3 id="homepage-icon-titles">
+      {{article.title}}
+    </h3>
+  </a>
+{{/each}}
+
+{{! below is scripting for carousel }}
 <script
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
