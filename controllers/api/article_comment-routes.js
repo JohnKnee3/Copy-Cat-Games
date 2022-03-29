@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Article_Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
+const withAdmin = require("../../utils/admin");
 
 //Get All Comments
 router.get("/", (req, res) => {
@@ -30,8 +31,8 @@ router.post("/", withAuth, (req, res) => {
   }
 });
 
-//ability yo delete a comment
-router.delete("/:id", withAuth, (req, res) => {
+//ability to delete a comment
+router.delete("/:id", withAdmin, (req, res) => {
   Article_Comment.destroy({
     where: {
       id: req.params.id,

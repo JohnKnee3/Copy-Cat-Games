@@ -6,6 +6,7 @@ const {
   Forum_Comment,
   Forum_Post,
 } = require("../../models");
+const withAdmin = require("../../utils/admin");
 
 // get all users
 router.get("/", (req, res) => {
@@ -121,29 +122,9 @@ router.post("/logout", (req, res) => {
 });
 
 //updates a users username and/or password and/or email
-router.put("/:id", (req, res) => {
+router.put("/:id", withAdmin, (req, res) => {
   User.update(req.body, {
     individualHooks: true,
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((dbUserData) => {
-      if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this id" });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-//deletes a user by id
-router.delete("/:id", (req, res) => {
-  User.destroy({
     where: {
       id: req.params.id,
     },

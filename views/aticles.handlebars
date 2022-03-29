@@ -16,25 +16,30 @@
     />
   </div>
   <p class="article-text">{{article.article_text_2}}</p>
+  {{#if loggedIn}}
+    <form id="new-comment">
+      <textarea
+        name="comment-area"
+        id="comment-area"
+        cols="50"
+        rows="5"
+        placeholder="Say Something Nice"
+      ></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  {{else}}
+    <p>You Must <a href="/login">Login</a> to Leave Comments!</p>
+  {{/if}}
   <div class="comments">
+
     <h5>Comments:</h5>
-    {{#if loggedIn}}
-      <form id="new-comment">
-        <textarea
-          name="comment-area"
-          id="comment-area"
-          cols="50"
-          rows="5"
-        ></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    {{else}}
-      <p>You Must <a href="/login">Login</a> to Leave Comments!</p>
-    {{/if}}
+
     <div class="comments-display">
       {{#each article.article_comments as |article_comment|}}
+        <p></p>
         <p class="comment-text">{{comment_text}}<span>
-            ({{user.username}})</span></p>
+            ({{user.username}}
+            {{format_date created_at}})</span></p>
       {{/each}}
     </div>
   </div>

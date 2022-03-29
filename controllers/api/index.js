@@ -11,7 +11,7 @@ router.use("/users", userRoutes);
 router.use("/articles", articleRoutes);
 router.use("/article_comments", article_commentRoutes);
 
-router.use("/forum-comment", forumCommentRoutes);
 router.use("/forum-post", forumPostRoutes);
+router.use("/forum-comment", forumCommentRoutes);
 
 module.exports = router;

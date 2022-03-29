@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Forum_Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
+const withAdmin = require("../../utils/admin");
 
 //Gets all Comments
 router.get("/", (req, res) => {
@@ -16,8 +17,9 @@ router.get("/", (req, res) => {
 router.post("/", withAuth, (req, res) => {
   Forum_Comment.create({
     comment_text: req.body.comment_text,
-    user_id: req.session.user_id,
     post_id: req.body.post_id,
+    //use the id from the session
+    user_id: req.session.user_id,
   })
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
@@ -27,7 +29,7 @@ router.post("/", withAuth, (req, res) => {
 });
 
 //Deletes a comment
-router.delete("/:id", withAuth, (req, res) => {
+router.delete("/:id", withAdmin, (req, res) => {
   Forum_Comment.destroy({
     where: {
       id: req.params.id,
