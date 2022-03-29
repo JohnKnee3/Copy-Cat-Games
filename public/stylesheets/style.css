@@ -1,189 +1,101 @@
 :root {
-  --primary: white;
-  --secondary: rgb(237, 237, 237);
+  --primary: #e6e6e6;
+  --secondary: #2488c6;
   --tertiary: #0a598a;
   --font: Helvetica, sans-serif;
 }
-
 h1 {
   margin-left: 15px;
   font-size: 3rem;
 }
-
 h2 {
   margin: 0px 20px;
   font-size: 2rem;
 }
-
 h3 {
   font-size: 1rem;
 }
-
 h4 {
   font-size: 1.75rem;
   margin-top: 20px;
 }
-
 h5 {
   font-size: 1.5rem;
 }
-
 h6 {
-  color: #0a598a;
+  color: var(--tertiary);
   font-family: var(--font);
   font-size: 1.25rem;
   padding: 10px;
-  font-weight: normal;
 }
-
 main {
   min-height: 100%;
 }
-
 body {
-  background-color: var(--primary);
+  background-color: white;
 }
 header {
-  background-color: #e6e6e6;
+  background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 5px solid #0a598a;
+  border-bottom: 5px solid var(--tertiary);
 }
-
 #logoAndTitle {
   margin-left: 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-
 #logo img {
   height: 150px;
 }
-
 h1 a {
-  color: #0a598a;
+  color: var(--tertiary);
   text-decoration: none;
   font-family: var(--font);
-  /* font-size: 3rem; */
-  font-weight: normal;
 }
-
 h1 a:hover {
-  color: #2488c6;
+  color: var(--secondary);
   text-decoration: none;
 }
-
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-
 h2 a {
-  color: #0a598a;
+  color: var(--tertiary);
   text-decoration: none;
   font-family: var(--font);
-  font-weight: normal;
 }
 h2 a:hover {
-  color: #2488c6;
-}
-
-.games {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 20px;
+  color: var(--secondary);
   text-decoration: none;
 }
-
-.games:hover {
-  transform: scale(1.05);
-}
-
-.games > h3 {
-  color: #0a598a;
-}
-
-.games:hover > h3 {
-  color: #2488c6;
-}
-
-.games:hover > #homepage-icon-titles {
-  color: #2488c6;
-  text-decoration: none;
-}
-
-.homepage-images-art {
-  height: 150px;
-  width: 250px;
-}
-
-#homepage-icon-titles {
-  margin-top: 15px;
-  color: #0a598a;
-  text-decoration: none;
-}
-
 footer {
-  background-color: #e6e6e6;
+  background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  border-top: 5px solid #0a598a;
+  border-top: 5px solid var(--tertiary);
 }
-
-.login-logout {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 20px 0px;
-}
-.form-label-input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.form-label {
-  font-size: 1.5rem;
-  padding: 5px;
-}
-.form-input {
-  width: 500px;
-  font-size: 1.5rem;
-  border-radius: 10px;
-  padding: 10px;
+.homepage-images-art {
+  height: 150px;
+  width: 250px;
 }
 .form-button {
-  width: 500px;
-  font-size: 1.5rem;
-  background-color: #0a598a;
-  color: var(--secondary);
-  border-radius: 10px;
-  margin-top: 15px;
-  padding: 10px;
+  background-color: var(--tertiary);
+  color: white;
+  width: 100px;
 }
-
 .form-button:hover {
   transform: scale(1.025);
 }
-
 .article-text {
   display: flex;
   flex-wrap: wrap;
@@ -194,9 +106,8 @@ footer {
 }
 .comments {
   margin: 20px 0px;
-  font-size: 1rem;
-  background-color: #e6e6e6;
-  border: 2.5px solid #0a598a;
+  background-color: var(--primary);
+  border: 2.5px solid var(--tertiary);
   padding: 10px;
 }
 #new-comment {
@@ -206,13 +117,31 @@ footer {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-
-#new-comment button {
-  background-color: #0a598a;
-  color: var(--secondary);
-  font-size: 1rem;
+.games {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+  text-decoration: none;
+}
+.games:hover {
+  transform: scale(1.05);
 }
 
+.games > h3 {
+  color: var(--tertiary);
+}
+
+.games:hover > h3 {
+  color: var(--secondary);
+}
+
+.games:hover > #homepage-icon-titles {
+  color: var(--secondary);
+  text-decoration: none;
+}
 /* forum css below */
 .threads {
   display: block;
@@ -240,16 +169,16 @@ footer {
 }
 
 .forumTitle {
-  color: #0a598a;
+  color: var(--tertiary);
   text-decoration: none !important;
 }
 
 #threadTitle {
-  color: #0a598a !important;
+  color: var(--tertiary) !important;
 }
 
 .forumTitle:hover {
-  color: #2488c6;
+  color: var(--secondary);
   transform: scale(1.0025);
   text-decoration: underline;
 }
