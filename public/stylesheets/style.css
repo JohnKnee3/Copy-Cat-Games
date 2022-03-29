@@ -1,6 +1,7 @@
 :root {
   --primary: white;
   --secondary: rgb(237, 237, 237);
+  --tertiary: #0a598a;
   --font: Helvetica, sans-serif;
 }
 
@@ -10,12 +11,21 @@ h1 {
 }
 
 h2 {
-  margin: 20px;
+  margin: 0px 20px;
   font-size: 2rem;
 }
 
 h3 {
   font-size: 1rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+  margin-top: 20px;
+}
+
+h5 {
+  font-size: 1.5rem;
 }
 
 h6 {
@@ -83,13 +93,6 @@ h2 a:hover {
   color: #2488c6;
 }
 
-/* main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  min-height: 100%;
-} */
 .games {
   display: flex;
   flex-direction: column;
@@ -117,20 +120,9 @@ h2 a:hover {
   text-decoration: none;
 }
 
-/* .images-art {
-  height: 75%;
-  width: 75%;
-  border-radius: 25px;
-  transition: transform 0.2s;
-} */
-/* .article {
-  width: 300px;
-} */
-/* homepage-images-art was created so the store images and article images didnt resize each other strangly on each corresponding page */
 .homepage-images-art {
   height: 150px;
   width: 250px;
-  /* transition: transform 0.2s; */
 }
 
 #homepage-icon-titles {
@@ -192,60 +184,19 @@ footer {
   transform: scale(1.025);
 }
 
-/* article {
-  margin: 20px 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-} */
-h4 {
-  padding-bottom: 20px;
-  width: 100%;
-  font-size: 2rem;
-  border-bottom: 5px dotted var(--primary);
-  margin: 20px 0px;
-  text-align: center;
-}
-.images-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 25px 0px;
-}
-/* .images {
-  height: 300px;
-  width: 500px;
-  border-radius: 25px;
-} */
 .article-text {
   display: flex;
   flex-wrap: wrap;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   line-height: 2;
   margin: 20px 0px;
   text-align: justify;
 }
 .comments {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 30px;
-}
-.comment-text {
   margin: 20px 0px;
-}
-h5 {
-  font-size: 1.5rem;
-}
-.comments {
   font-size: 1rem;
   background-color: #e6e6e6;
-  border: 5px solid #0a598a;
+  border: 2.5px solid #0a598a;
   padding: 10px;
 }
 #new-comment {
@@ -255,28 +206,14 @@ h5 {
   align-items: flex-start;
   flex-wrap: wrap;
 }
-#new-comment textarea {
-  font-size: 1rem;
-  padding: 5px;
-}
 
 #new-comment button {
   background-color: #0a598a;
   color: var(--secondary);
-  font-size: 1.25rem;
-  padding: 5px;
-  margin-top: 2.5px;
-}
-
-#new-comment button:hover {
-  transform: scale(1.025);
-}
-.comments-display {
-  margin-top: 20px;
+  font-size: 1rem;
 }
 
 /* forum css below */
-
 .threads {
   display: block;
   height: auto;
@@ -316,5 +253,3 @@ h5 {
   transform: scale(1.0025);
   text-decoration: underline;
 }
-
-/* potentially cool bg here? */
