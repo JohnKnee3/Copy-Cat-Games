@@ -11,3 +11,5 @@ heroku run bash
 node bin/seed.js
 
 1
+
+https://morning-spire-87893.herokuapp.com
