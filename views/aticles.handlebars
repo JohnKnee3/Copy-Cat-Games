@@ -1,42 +1,39 @@
-<article>
-  <h4>{{article.title}}</h4>
-  <div class="images-container">
-    <img
-      class="images"
-      src="/images/{{article.images.0.filename}}"
-      alt="{{article.title}}"
-    />
-  </div>
-  <p class="article-text">{{article.article_text_1}}</p>
-  <div class="images-container">
-    <img
-      class="images"
-      src="/images/{{article.images.2.filename}}"
-      alt="{{article.title}}"
-    />
-  </div>
-  <p class="article-text">{{article.article_text_2}}</p>
-
+<article class="row">
+  <h4 class="col-12 text-center">{{article.title}}</h4>
+  <h3 class="col-12 text-center">&#9856 &#9857 &#9858 &#9859 &#9860 &#9861
+    &#9860 &#9859 &#9858 &#9857 &#9856</h3>
+  <img
+    class="col-12 my-3"
+    src="/images/{{article.images.0.filename}}"
+    alt="{{article.title}}"
+  />
+  <p class="article-text col-12">{{article.article_text_1}}</p>
+  <img
+    class="col-12 my-3"
+    src="/images/{{article.images.2.filename}}"
+    alt="{{article.title}}"
+  />
+  <p class="article-text col-12">{{article.article_text_2}}</p>
   {{#if loggedIn}}
-  <div class="comments">
-    <form id="new-comment">
-      <textarea
-        name="comment-area"
-        id="comment-area"
-        cols="50"
-        rows="5"
-        placeholder="Say Something Nice"
-      ></textarea>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="comments col-12">
+      <form id="new-comment" class="form-floating">
+        <textarea
+          name="comment-area"
+          id="comment-area"
+          class="form-control mb-2"
+          placeholder="Say Something Nice!"
+        ></textarea>
+        <div class="col-12">
+          <button type="submit" class="form-button">Submit</button>
+        </div>
+      </form>
     </div>
   {{else}}
-  <div class="comments">
-    <p>You Must <a href="/login">Login</a> to Leave Comments!</p>
-  </div>
+    <div class="comments col-12">
+      <p>You Must <a href="/login">Login</a> to Leave Comments!</p>
+    </div>
   {{/if}}
-
-  <div class="comments">
+  <div class="comments col-12">
     <h5>Comments:</h5>
     <div class="comments-display">
       {{#each article.article_comments as |article_comment|}}

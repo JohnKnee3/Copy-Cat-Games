@@ -1,90 +1,121 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
 :root {
-  --primary: white;
-  --secondary: rgb(237, 237, 237);
+  --primary: #e6e6e6;
+  --secondary: #2488c6;
+  --tertiary: #0a598a;
   --font: Helvetica, sans-serif;
 }
+h1 {
+  margin-left: 15px;
+  font-size: 3rem;
+}
+h2 {
+  margin: 0px 20px;
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1rem;
+}
+h4 {
+  font-size: 1.75rem;
+  margin-top: 20px;
+}
+h5 {
+  font-size: 1.5rem;
+}
+h6 {
+  color: var(--tertiary);
+  font-family: var(--font);
+  font-size: 1.25rem;
+  padding: 10px;
+}
+main {
+  min-height: 100%;
+}
 body {
-  background-color: var(--primary);
+  background-color: white;
 }
 header {
-  background-color: #E6E6E6;
+  background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
-  border-bottom: 5px solid #0A598A;
+  border-bottom: 5px solid var(--tertiary);
 }
-
 #logoAndTitle {
+  margin-left: 10px;
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-
-#logo {
-   height: 10%;
-   width: 10%;
- }
-
-#myCarousel {
-  width: 80vw;
-  height: auto;
+#logo img {
+  height: 150px;
 }
-
-#banner {
-border-radius: 25px;
-}
-
-h1 {
-  margin: 20px;
-}
-
 h1 a {
-  color: #0A598A;
+  color: var(--tertiary);
   text-decoration: none;
   font-family: var(--font);
-  font-size: 3rem;
-  font-weight: normal;
 }
-
 h1 a:hover {
-  color: #2488C6;
+  color: var(--secondary);
   text-decoration: none;
 }
-
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-h2 {
-  margin: 20px;
-}
 h2 a {
-  color: #0A598A;
+  color: var(--tertiary);
   text-decoration: none;
   font-family: var(--font);
-  font-size: 2rem;
-  font-weight: normal;
 }
 h2 a:hover {
-  color: #2488C6;
+  color: var(--secondary);
+  text-decoration: none;
 }
-
-main {
+footer {
+  background-color: var(--primary);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  min-height: 100%;
+  margin-top: 10px;
+  border-top: 5px solid var(--tertiary);
+}
+.homepage-images-art {
+  height: 150px;
+  width: 250px;
+}
+.form-button {
+  background-color: var(--tertiary);
+  color: white;
+  width: 100px;
+}
+.form-button:hover {
+  transform: scale(1.025);
+}
+.article-text {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.25rem;
+  line-height: 2;
+  margin: 20px 0px;
+  text-align: justify;
+}
+.comments {
+  margin: 20px 0px;
+  background-color: var(--primary);
+  border: 2.5px solid var(--tertiary);
+  padding: 10px;
+}
+#new-comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 .games {
   display: flex;
@@ -95,194 +126,23 @@ main {
   margin: 20px;
   text-decoration: none;
 }
-
-.games:hover{
+.games:hover {
   transform: scale(1.05);
 }
 
 .games > h3 {
-  color: #0A598A;
+  color: var(--tertiary);
 }
 
 .games:hover > h3 {
-  color: #2488C6;
+  color: var(--secondary);
 }
 
 .games:hover > #homepage-icon-titles {
-  color:#2488C6;
-  text-decoration: none;
-} 
-
-.images-art {
-  height: 75%;
-  width: 75%;
-  border-radius: 25px;
-  transition: transform .2s;
-}
-
-/* homepage-images-art was created so the store images and article images didnt resize each other strangly on each corresponding page */
-.homepage-images-art{
-  height: 33vh;
-  width: 33vw;
-  border-radius: 25px;
-  transition: transform .2s;
-}
-
-#homepage-icon-titles {
-  margin-top: 15px;
-  color: #0A598A;
+  color: var(--secondary);
   text-decoration: none;
 }
-
-h3 {
-  margin: 10px 0px;
-  color: var(--primary);
-}
-
-footer {
-  background-color: #E6E6E6;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  border-top: 5px solid #0A598A;
-}
-h6 {
-  color: #0A598A;;
-  font-family: var(--font);
-  font-size: 1.5rem;
-  padding: 10px;
-  font-weight: normal;
-}
-.login-logout {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 20px 0px;
-}
-.form-label-input {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.form-label {
-  font-size: 1.5rem;
-  padding: 5px;
-}
-.form-input {
-  width: 500px;
-  font-size: 1.5rem;
-  border-radius: 10px;
-  padding: 10px;
-}
-.form-button {
-  width: 500px;
-  font-size: 1.5rem;
-  background-color: #0A598A;
-  color: var(--secondary);
-  border-radius: 10px;
-  margin-top: 15px;
-  padding: 10px;
-}
-
-.form-button:hover {
-  transform: scale(1.025);
-}
-
-article {
-  margin: 20px 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-h4 {
-  padding-bottom: 20px;
-  width: 100%;
-  font-size: 2rem;
-  border-bottom: 5px dotted var(--primary);
-  margin: 20px 0px;
-  text-align: center;
-}
-.images-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 25px 0px;
-}
-.images {
-  height: 300px;
-  width: 500px;
-  border-radius: 25px;
-}
-.article-text {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1.5rem;
-  line-height: 2;
-  margin: 20px 0px;
-  text-align: justify;
-}
-.comments {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 30px;
-}
-.comment-text {
-  margin: 20px 0px;
-}
-h5 {
-  font-size: 1.5rem;
-}
-.comments {
-  font-size: 1rem;
-  background-color: #E6E6E6;
-  border: 5px solid #0A598A;
-  padding: 10px;
-}
-#new-comment {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-#new-comment textarea {
-  font-size: 1rem;
-  padding: 5px;
-}
-
-#new-comment button {
-  background-color: #0A598A;
-  color: var(--secondary);
-  font-size: 1.25rem;
-  padding: 5px;
-  margin-top: 2.5px;
-}
-
-#new-comment button:hover {
-  transform: scale(1.025);
-}
-.comments-display {
-  margin-top: 20px;
-}
-
 /* forum css below */
-
 .threads {
   display: block;
   height: auto;
@@ -309,18 +169,16 @@ h5 {
 }
 
 .forumTitle {
-color: #0A598A;
-text-decoration: none !important;
+  color: var(--tertiary);
+  text-decoration: none !important;
 }
 
 #threadTitle {
-color: #0A598A !important;
+  color: var(--tertiary) !important;
 }
 
 .forumTitle:hover {
-  color: #2488C6;
+  color: var(--secondary);
   transform: scale(1.0025);
   text-decoration: underline;
 }
-
-/* potentially cool bg here? */

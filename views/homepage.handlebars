@@ -1,8 +1,8 @@
 {{! below is the carousel on the homepage }}
-<div id="myCarousel">
+<div id="myCarousel" class="row my-5">
   <div
     id="carouselExampleIndicators"
-    class="carousel slide"
+    class="carousel slide col-12"
     data-ride="carousel"
   >
     <ol class="carousel-indicators">
@@ -70,19 +70,28 @@
   </div>
 </div>
 
-{{! below is the handlebars for the aritcles on the main page }}
-{{#each articles as |article|}}
-  <a class="games text-decoration-none" href="/article/{{id}}">
-    <img
-      class="homepage-images-art"
-      src="/images/{{article.images.0.filename}}"
-      alt="{{article.title}}"
-    />
-    <h3 id="homepage-icon-titles">
-      {{article.title}}
-    </h3>
-  </a>
-{{/each}}
+{{! below is the handlebars for the articles on the main page }}
+<div class="row my-5">
+  {{#each articles as |article|}}
+    <div
+      class="card border-0 col-xl-3 col-lg-4 col-md-6 col-sm-12 flex-row justify-content-center align-items-center"
+    >
+      <a
+        class="text-decoration-none card-body d-flex flex-column justify-content-center align-items-center"
+        href="/article/{{id}}"
+      >
+        <img
+          class="homepage-images-art card-img-top"
+          src="/images/{{article.images.0.filename}}"
+          alt="{{article.title}}"
+        />
+        <h3 id="homepage-icon-titles" class="text-start card-title mt-2">
+          {{article.title}}
+        </h3>
+      </a>
+    </div>
+  {{/each}}
+</div>
 
 {{! below is scripting for carousel }}
 <script
@@ -100,4 +109,4 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
   crossorigin="anonymous"
 ></script>
-<script>var myCarousel = document.querySelector('#myCarousel') </script>
+<script>var myCarousel = document.querySelector('#myCarousel')</script>
