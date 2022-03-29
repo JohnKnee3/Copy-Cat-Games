@@ -1,13 +1,35 @@
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
 :root {
   --primary: white;
   --secondary: rgb(237, 237, 237);
   --font: Helvetica, sans-serif;
 }
+
+h1 {
+  margin-left: 15px;
+  font-size: 3rem;
+}
+
+h2 {
+  margin: 20px;
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h6 {
+  color: #0a598a;
+  font-family: var(--font);
+  font-size: 1.25rem;
+  padding: 10px;
+  font-weight: normal;
+}
+
+main {
+  min-height: 100%;
+}
+
 body {
   background-color: var(--primary);
 }
@@ -17,36 +39,25 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
   border-bottom: 5px solid #0a598a;
 }
 
 #logoAndTitle {
+  margin-left: 10px;
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
 
-#logo {
-  height: 10%;
-  width: 10%;
-}
-
-#myCarousel {
-  width: 80vw;
-  height: auto;
-}
-
-h1 {
-  margin: 20px;
+#logo img {
+  height: 150px;
 }
 
 h1 a {
   color: #0a598a;
   text-decoration: none;
   font-family: var(--font);
-  font-size: 3rem;
+  /* font-size: 3rem; */
   font-weight: normal;
 }
 
@@ -61,14 +72,11 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-h2 {
-  margin: 20px;
-}
+
 h2 a {
   color: #0a598a;
   text-decoration: none;
   font-family: var(--font);
-  font-size: 2rem;
   font-weight: normal;
 }
 h2 a:hover {
@@ -140,13 +148,7 @@ footer {
   margin-top: 10px;
   border-top: 5px solid #0a598a;
 }
-h6 {
-  color: #0a598a;
-  font-family: var(--font);
-  font-size: 1.5rem;
-  padding: 10px;
-  font-weight: normal;
-}
+
 .login-logout {
   display: flex;
   flex-direction: column;

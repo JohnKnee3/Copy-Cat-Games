@@ -1,5 +1,5 @@
 {{! below is the carousel on the homepage }}
-<div id="myCarousel" class="row">
+<div id="myCarousel" class="row my-5">
   <div
     id="carouselExampleIndicators"
     class="carousel slide col-12"
@@ -71,7 +71,7 @@
 </div>
 
 {{! below is the handlebars for the articles on the main page }}
-<div class="row">
+<div class="row my-5">
   {{#each articles as |article|}}
     <div
       class="card border-0 col-xl-3 col-lg-4 col-md-6 col-sm-12 flex-row justify-content-center align-items-center"
@@ -85,9 +85,9 @@
           src="/images/{{article.images.0.filename}}"
           alt="{{article.title}}"
         />
-        <p id="homepage-icon-titles card-title">
+        <h3 id="homepage-icon-titles" class="text-start card-title">
           {{article.title}}
-        </p>
+        </h3>
       </a>
     </div>
   {{/each}}
