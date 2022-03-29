@@ -1,4 +1,4 @@
-{{!-- below is the carousel on the homepage --}}
+{{! below is the carousel on the homepage }}
 <div id="myCarousel">
   <div
     id="carouselExampleIndicators"
@@ -70,17 +70,21 @@
   </div>
 </div>
 
-{{!-- below is the handlebars for the aritcles on the main page --}}
+{{! below is the handlebars for the aritcles on the main page }}
 {{#each articles as |article|}}
-<a class="games text-decoration-none" href="/article/{{id}}">
-  <img class="homepage-images-art" src="/images/{{article.images.0.filename}}" alt="{{article.title}}" />
-  <h3 id="homepage-icon-titles">
-    {{article.title}}
-  </h3>
-</a>
+  <a class="games text-decoration-none" href="/article/{{id}}">
+    <img
+      class="homepage-images-art"
+      src="/images/{{article.images.0.filename}}"
+      alt="{{article.title}}"
+    />
+    <h3 id="homepage-icon-titles">
+      {{article.title}}
+    </h3>
+  </a>
 {{/each}}
 
-{{!-- below is scripting for carousel --}}
+{{! below is scripting for carousel }}
 <script
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -96,4 +100,4 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
   crossorigin="anonymous"
 ></script>
-<script>var myCarousel = document.querySelector('#myCarousel')</script>
+<script>var myCarousel = document.querySelector('#myCarousel') </script>
