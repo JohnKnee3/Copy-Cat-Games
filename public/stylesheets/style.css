@@ -210,3 +210,11 @@ margin: 0 !important;
   margin-top: 10px;
   color: #0a598a;
 }
+
+@media only screen and (max-width: 1300px){
+  .threads {
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: 80%;
+  }
+}
