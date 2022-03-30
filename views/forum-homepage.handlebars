@@ -1,5 +1,5 @@
 {{#if loggedIn}}
-  <div id="createThread">
+  <div class="text-center mb-3" id="createThread">
     <a href="/dashboard">
       <h2 id="threadCreation">
         Click here to create a thread!
@@ -7,11 +7,10 @@
     </a>
   </div>
 {{else}}
-  <p>You Must <a href="/login">Login</a> to create a thread!</p>
+  <p class="text-center mb-3 mt-3">You Must <a href="/login">Login</a> to create a thread!</p>
 {{/if}}
 
 {{#each posts as |post|}}
-
   <div class="threads">
     <a id="threadLink" href="/forum/forum-post/{{id}}">
       <h3 class="forumTitle">
