@@ -10,10 +10,12 @@
 
 
 {{#if loggedIn}}
+<div class="comments">
     <form id="new-comment">
       <textarea name="comment-area" id="comment-area" cols="50" rows="5" placeholder="Say Something Nice"></textarea>
       <button type="submit">Submit</button>
     </form>
+</div>
     {{else}}
     <p>You Must <a href="/login">Login</a> to Leave Comments!</p>
     {{/if}}
@@ -21,10 +23,9 @@
 <div class="comments">
   <h5>Comments:</h5>
   <div class="comments-display">
-    
     {{#each post.forum_comments as |Forum_Comment|}}
-    <p class="comment-text">{{comment_text}}<span>
-        ({{user.username}} {{format_date created_at}})</span></p>
+    <p><u>{{user.username}} posted at {{format_date created_at}}</u></p>
+    <p class="comment-text">{{comment_text}}</p>
     {{/each}}
     
   </div>
