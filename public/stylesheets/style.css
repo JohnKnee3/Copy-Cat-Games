@@ -105,6 +105,12 @@ footer {
   margin: 20px 0px;
   text-align: justify;
 }
+.pics-size {
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .comments {
   margin: 20px 0px;
   background-color: var(--primary);
