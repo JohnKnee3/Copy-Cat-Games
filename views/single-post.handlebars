@@ -12,7 +12,7 @@
 {{#if loggedIn}}
 <div class="comments">
     <form id="new-comment">
-      <textarea name="comment-area" id="comment-area" cols="50" rows="5" placeholder="Say Something Nice"></textarea>
+      <textarea name="comment-area" id="comment-area" class="form-control mb-2" placeholder="Say Something Nice"></textarea>
       <button class="form-button mt-1" type="submit">Submit</button>
     </form>
 </div>
@@ -24,8 +24,9 @@
   <h5>Comments:</h5>
   <div class="comments-display">
     {{#each post.forum_comments as |Forum_Comment|}}
-    <p><u>{{user.username}} posted at {{format_date created_at}}</u></p>
-    <p class="comment-text">{{comment_text}}</p>
+        <p class="comment-text">{{comment_text}}<span>
+            ({{user.username}}
+            {{format_date created_at}})</span></p>
     {{/each}}
     
   </div>
