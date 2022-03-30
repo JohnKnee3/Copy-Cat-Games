@@ -81,7 +81,7 @@
         class="text-decoration-none card-body d-flex flex-column justify-content-center hoverHere"
         href="/article/{{id}}"
       >
-      <p class="articleDate">{{format_date article.created_at}}</p>
+        <p class="articleDate">{{format_date article.created_at}}</p>
         <img
           class="images card-img-top"
           src="/images/{{article.images.0.filename}}"
@@ -90,7 +90,7 @@
         <h3 id="homepage-icon-titles" class="text-start card-title mt-2">
           {{article.title}}
         </h3>
-        <p>{{article.description}} </p>
+        <p class="article-description">{{article.description}} </p>
 
       </a>
     </div>
