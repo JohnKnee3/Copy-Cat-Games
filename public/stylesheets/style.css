@@ -42,6 +42,10 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 5px solid var(--tertiary);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 9999;
 }
 #logoAndTitle {
   margin-left: 10px;
@@ -50,7 +54,7 @@ header {
   align-items: center;
 }
 #logo img {
-  height: 150px;
+  height: 125px;
 }
 h1 a {
   color: var(--tertiary);
@@ -89,6 +93,16 @@ footer {
   height: 150px;
   width: 250px;
 }
+
+.hoverHere{
+  color: #0a598a;
+}
+
+.hoverHere:hover{
+transform: scale(1.05);
+color: #2488c6;
+}
+
 .form-button {
   background-color: var(--tertiary);
   color: white;
@@ -105,6 +119,12 @@ footer {
   margin: 20px 0px;
   text-align: justify;
 }
+
+.articleDate{
+padding: 0 !important;
+margin: 0 !important;
+}
+
 .pics-size {
   max-width: 95%;
   margin-left: auto;
@@ -139,7 +159,7 @@ footer {
   height: 100%;
 }
 /* forum css below */
-#threadCreation{
+#threadCreation {
   margin-top: 15px;
 }
 
@@ -155,7 +175,7 @@ footer {
   text-decoration: none;
   margin-bottom: 10px;
   margin-top: 10px;
-  padding:10px;
+  padding: 10px;
 }
 
 #threadLink {
@@ -188,4 +208,17 @@ footer {
   color: var(--secondary);
   transform: scale(1.0025);
   text-decoration: underline;
+}
+
+#createNewPost{
+  margin-top: 10px;
+  color: #0a598a;
+}
+
+@media only screen and (max-width: 1300px){
+  .threads {
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: 80%;
+  }
 }
