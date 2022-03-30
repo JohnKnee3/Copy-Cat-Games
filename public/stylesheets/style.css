@@ -234,4 +234,15 @@ footer {
   nav {
     margin-left: 27px;
   }
+  .images {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #homepage-icon-titles {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .articleDate {
+    margin-left: 38px !important;
+  }
 }
