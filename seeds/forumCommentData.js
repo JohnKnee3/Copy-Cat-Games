@@ -51,6 +51,19 @@ const forumCommentData = [
     post_id: 4,
     createdAt: "2022-03-28T15:06:55.000Z",
   },
+  {
+    comment_text:
+      "Interesting, I'd like to try this game too.  Make it happen CCG!!!!!",
+    user_id: "b7adb27d-00bf-427a-887b-e5c1ff335c57",
+    post_id: 5,
+    createdAt: "2022-03-29T15:06:55.000Z",
+  },
+  {
+    comment_text: "But why????  Cats are the worst.  Dog Power!!",
+    user_id: "7c4f66a1-796a-41d1-b01d-7a1a3afaf67d",
+    post_id: 5,
+    createdAt: "2022-03-29T15:06:55.000Z",
+  },
 ];
 
 const seedForumComments = () => Forum_Comment.bulkCreate(forumCommentData);
