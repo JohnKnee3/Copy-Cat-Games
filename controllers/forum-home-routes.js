@@ -2,7 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Forum_Post, User, Forum_Comment } = require("../models");
 
-// get all posts for homepage
+// get all posts for forum page
 router.get("/", (req, res) => {
   console.log("======================");
   console.log(req.session.user_id);
@@ -37,6 +37,7 @@ router.get("/", (req, res) => {
     });
 });
 
+//Get one forum post
 router.get("/forum-post/:id", (req, res) => {
   Forum_Post.findOne({
     where: {
