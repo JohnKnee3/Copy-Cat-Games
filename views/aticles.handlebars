@@ -3,13 +3,13 @@
   <h3 class="col-12 text-center">&#9856 &#9857 &#9858 &#9859 &#9860 &#9861
     &#9860 &#9859 &#9858 &#9857 &#9856</h3>
   <img
-    class="col-12 my-3"
+    class="col-12 my-3 pics-size"
     src="/images/{{article.images.0.filename}}"
     alt="{{article.title}}"
   />
   <p class="article-text col-12">{{article.article_text_1}}</p>
   <img
-    class="col-12 my-3"
+    class="col-12 my-3 pics-size"
     src="/images/{{article.images.2.filename}}"
     alt="{{article.title}}"
   />
@@ -37,7 +37,6 @@
     <h5>Comments:</h5>
     <div class="comments-display">
       {{#each article.article_comments as |article_comment|}}
-        <p></p>
         <p class="comment-text">{{comment_text}}<span>
             ({{user.username}}
             {{format_date created_at}})</span></p>
