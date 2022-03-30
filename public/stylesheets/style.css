@@ -93,6 +93,16 @@ footer {
   height: 150px;
   width: 250px;
 }
+
+.hoverHere{
+  color: #0a598a;
+}
+
+.hoverHere:hover{
+transform: scale(1.05);
+color: #2488c6;
+}
+
 .form-button {
   background-color: var(--tertiary);
   color: white;
@@ -109,6 +119,12 @@ footer {
   margin: 20px 0px;
   text-align: justify;
 }
+
+.articleDate{
+padding: 0 !important;
+margin: 0 !important;
+}
+
 .pics-size {
   max-width: 95%;
   margin-left: auto;
@@ -192,4 +208,17 @@ footer {
   color: var(--secondary);
   transform: scale(1.0025);
   text-decoration: underline;
+}
+
+#createNewPost{
+  margin-top: 10px;
+  color: #0a598a;
+}
+
+@media only screen and (max-width: 1300px){
+  .threads {
+    margin-left: 10%;
+    margin-right: 10%;
+    min-width: 80%;
+  }
 }
