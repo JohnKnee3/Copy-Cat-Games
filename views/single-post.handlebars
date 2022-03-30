@@ -24,8 +24,10 @@
   <h5>Comments:</h5>
   <div class="comments-display">
     {{#each post.forum_comments as |Forum_Comment|}}
-    <p><u>{{user.username}} posted at {{format_date created_at}}</u></p>
-    <p class="comment-text">{{comment_text}}</p>
+    <div class="comment-text">
+    <u>{{user.username}} posted at {{format_date created_at}}</u>
+    <p>{{comment_text}}</p>
+    </div>
     {{/each}}
     
   </div>
