@@ -94,13 +94,13 @@ footer {
   width: 250px;
 }
 
-.hoverHere{
+.hoverHere {
   color: #0a598a;
 }
 
-.hoverHere:hover{
-transform: scale(1.05);
-color: #2488c6;
+.hoverHere:hover {
+  transform: scale(1.05);
+  color: #2488c6;
 }
 
 .form-button {
@@ -120,9 +120,9 @@ color: #2488c6;
   text-align: justify;
 }
 
-.articleDate{
-padding: 0 !important;
-margin: 0 !important;
+.articleDate {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .pics-size {
@@ -166,9 +166,9 @@ margin: 0 !important;
 .threads {
   display: block;
   height: auto;
-  margin-left: 25%;
-  margin-right: 25%;
-  min-width: 50%;
+  margin-left: 10%;
+  margin-right: 10%;
+  min-width: 80%;
   color: black;
   border: solid 5px #0a598a;
   background-color: #e6e6e6;
@@ -210,15 +210,28 @@ margin: 0 !important;
   text-decoration: underline;
 }
 
-#createNewPost{
+#createNewPost {
   margin-top: 10px;
   color: #0a598a;
 }
 
-@media only screen and (max-width: 1300px){
-  .threads {
-    margin-left: 10%;
-    margin-right: 10%;
-    min-width: 80%;
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 911px) {
+  h1 {
+    font-size: 1.9rem;
+    margin-top: 5px;
+  }
+  #logo img {
+    height: 50px;
+  }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media only screen and (max-width: 650px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+  nav {
+    margin-left: 27px;
   }
 }
