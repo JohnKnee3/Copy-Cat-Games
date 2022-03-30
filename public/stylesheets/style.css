@@ -118,6 +118,14 @@ footer {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+.comment-text:nth-child(odd) {
+  background-color: #ffffff;
+  padding: 1rem;
+}
+.comment-text:nth-child(even) {
+  background-color: #eef4ff;
+  padding: 1rem;
+}
 .store {
   height: 300px;
 }
