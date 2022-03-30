@@ -7,6 +7,7 @@
 h1 {
   margin-left: 15px;
   font-size: 3rem;
+  font-weight: bold;
 }
 h2 {
   margin: 0px 20px;
@@ -248,7 +249,7 @@ footer {
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media only screen and (max-width: 650px) {
   h1 {
-    margin-left: 28px;
+    margin-left: 25px;
   }
 
   h2 {
