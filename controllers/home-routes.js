@@ -4,7 +4,7 @@ const { Article, Images, Article_Comment, User } = require("../models");
 //Homepage load
 router.get("/", (req, res) => {
   Article.findAll({
-    attributes: ["id", "title"],
+    attributes: ["id", "title", "description", "created_at"],
     order: [[Images, "id"]],
     include: [
       {

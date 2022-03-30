@@ -29,6 +29,13 @@ const forumPostData = [
     user_id: "e8b59396-5f08-4242-afc8-b9a3b0f4964d",
     createdAt: "2022-03-28T15:06:55.000Z",
   },
+  {
+    title: "Let's make Isle of Cats happen!!!!",
+    post_content:
+      "I like most of us here I ONLY like games that CCG claims to make.  There is the new game called  Isle of Cats that most of my friends on the Feline Facebook group won't stop purring about.  Let's make some noise on these forums so we can get CCG to add this game to their collection so I can finally start liking it as well!!!",
+    user_id: "0a8a6e32-7467-4618-8013-75da5c3361fc",
+    createdAt: "2022-03-29T15:06:55.000Z",
+  },
 ];
 
 const seedForumPosts = () => Forum_Post.bulkCreate(forumPostData);

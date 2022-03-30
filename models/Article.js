@@ -16,6 +16,10 @@ Article.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     article_text_1: {
       type: DataTypes.TEXT,
       allowNull: false,
