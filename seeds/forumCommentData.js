@@ -59,7 +59,7 @@ const forumCommentData = [
     createdAt: "2022-03-29T15:06:55.000Z",
   },
   {
-    comment_text: "But why????  Cats are the worst.  Dog Power!!",
+    comment_text: "But why????  Cats are the worst!!",
     user_id: "7c4f66a1-796a-41d1-b01d-7a1a3afaf67d",
     post_id: 5,
     createdAt: "2022-03-29T15:06:55.000Z",

@@ -3,6 +3,7 @@ const sequelize = require("../config/connection");
 const { Forum_Post, User, Forum_Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
+//Get all forum posts
 router.get("/", withAuth, (req, res) => {
   console.log(req.session);
   console.log("======================");
@@ -35,6 +36,7 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
+//Edit one forum post
 router.get("/edit/:id", withAuth, (req, res) => {
   Forum_Post.findByPk(req.params.id, {
     include: [
@@ -70,45 +72,37 @@ router.get("/edit/:id", withAuth, (req, res) => {
 });
 
 // get all posts for dashboard
-router.get('/', withAuth, (req, res) => {
-    console.log(req.session);
-    console.log('======================');
-    Post.findAll({
-        where: {
-            user_id: req.session.user_id
-        },
-        // attributes: [
-        //     'id',
-        //     'post_content',
-        //     'title',
-        //     'created_at',
-        //     [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-        // ],
-        include: [
-            {
-                model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
-            },
-            {
-                model: User,
-                attributes: ['username']
-            }
-        ]
-    })
-        .then(dbPostData => {
-            const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('forum-dashboard', { posts, loggedIn: true });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+router.get("/", withAuth, (req, res) => {
+  console.log(req.session);
+  console.log("======================");
+  Post.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
 
-// get route for * catch all to send 404
+    include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      const posts = dbPostData.map((post) => post.get({ plain: true }));
+      res.render("forum-dashboard", { posts, loggedIn: true });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 module.exports = router;

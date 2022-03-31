@@ -7,6 +7,7 @@
 h1 {
   margin-left: 15px;
   font-size: 3rem;
+  font-weight: bold;
 }
 h2 {
   margin: 0px 20px;
@@ -93,6 +94,16 @@ footer {
   height: 150px;
   width: 250px;
 }
+
+.hoverHere {
+  color: #0a598a;
+}
+
+.hoverHere:hover {
+  transform: scale(1.05);
+  color: #2488c6;
+}
+
 .form-button {
   background-color: var(--tertiary);
   color: white;
@@ -109,6 +120,12 @@ footer {
   margin: 20px 0px;
   text-align: justify;
 }
+
+.articleDate {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .pics-size {
   max-width: 95%;
   margin-left: auto;
@@ -150,9 +167,7 @@ footer {
 .threads {
   display: block;
   height: auto;
-  margin-left: 25%;
-  margin-right: 25%;
-  min-width: 50%;
+  min-width: 80%;
   color: black;
   border: solid 5px #0a598a;
   background-color: #e6e6e6;
@@ -192,4 +207,71 @@ footer {
   color: var(--secondary);
   transform: scale(1.0025);
   text-decoration: underline;
+}
+
+#createNewPost {
+  margin-top: 10px;
+  color: #0a598a;
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 935px) {
+  h1 {
+    font-size: 1.7rem;
+    margin-top: 5px;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  #logo img {
+    height: 50px;
+  }
+}
+
+/* MEDIA QUERY FOR MY PHONES WIDESCREEN */
+@media only screen and (max-width: 770px) {
+  .images {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #homepage-icon-titles {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .articleDate {
+    text-align: center;
+  }
+  .article-description {
+    text-align: center;
+  }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media only screen and (max-width: 650px) {
+  header {
+    justify-content: space-around;
+  }
+  /* h1 {
+    margin-left: 25px;
+  } */
+  #logoAndTitle {
+    margin-left: -78px;
+  }
+  #titleOfSite {
+    margin-left: 26px;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  /* nav {
+    margin-left: 27px;
+  } */
+
+  /* .articleDate {
+    margin-left: 113px !important;
+  } */
+  .article-container {
+    margin-left: 1px;
+    margin-right: 1px;
+  }
 }

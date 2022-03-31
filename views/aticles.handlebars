@@ -1,4 +1,4 @@
-<article class="row">
+<article class="row article-container">
   <h4 class="col-12 text-center">{{article.title}}</h4>
   <h3 class="col-12 text-center">&#9856 &#9857 &#9858 &#9859 &#9860 &#9861
     &#9860 &#9859 &#9858 &#9857 &#9856</h3>
@@ -37,13 +37,14 @@
     <h5>Comments:</h5>
     <div class="comments-display">
       {{#each article.article_comments as |article_comment|}}
-        <p class="comment-text">{{comment_text}}<span>
-            ({{user.username}}
-            {{format_date created_at}})</span></p>
+      <div class="comment-text">
+        <u>{{user.username}} posted at {{format_date created_at}}</u>
+        <p>{{comment_text}}</p>
+      </div>
       {{/each}}
     </div>
   </div>
-</div>
+</article>
 
 </article>
 {{#if loggedIn}}
