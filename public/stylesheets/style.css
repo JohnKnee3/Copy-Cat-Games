@@ -215,7 +215,7 @@ footer {
 }
 
 /* MEDIA QUERY FOR TABLETS AND SMALLER */
-@media screen and (max-width: 911px) {
+@media screen and (max-width: 935px) {
   h1 {
     font-size: 1.7rem;
     margin-top: 5px;
@@ -229,7 +229,7 @@ footer {
 }
 
 /* MEDIA QUERY FOR MY PHONES WIDESCREEN */
-@media only screen and (max-width: 670px) {
+@media only screen and (max-width: 770px) {
   .images {
     margin-left: auto;
     margin-right: auto;
@@ -239,7 +239,7 @@ footer {
     margin-right: auto;
   }
   .articleDate {
-    margin-left: 114px !important;
+    text-align: center;
   }
   .article-description {
     text-align: center;
@@ -248,20 +248,28 @@ footer {
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media only screen and (max-width: 650px) {
-  h1 {
-    margin-left: 25px;
+  header {
+    justify-content: space-around;
   }
-
+  /* h1 {
+    margin-left: 25px;
+  } */
+  #logoAndTitle {
+    margin-left: -78px;
+  }
+  #titleOfSite {
+    margin-left: 26px;
+  }
   h2 {
     font-size: 1.5rem;
   }
-  nav {
+  /* nav {
     margin-left: 27px;
-  }
+  } */
 
-  .articleDate {
-    margin-left: 28px !important;
-  }
+  /* .articleDate {
+    margin-left: 113px !important;
+  } */
   .article-container {
     margin-left: 1px;
     margin-right: 1px;
