@@ -16,7 +16,7 @@ This full stack web application allows a user to view a storefront for Copy Cat 
 ![BSD-3-Clause](https://img.shields.io/badge/License-BSD_3--Clause-green.svg)
 
 ### Application Demo
-![Copy Cat Games Demo](./public/images/demo.gif)
+![Copy Cat Games Demo](./public/images/demo.png)
 
 ### Features Used
 | Feature       | Summary                                                                                                  | 
